@@ -1,0 +1,48 @@
+name: Decompile Large APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: 'Прямая ссылка на скачивание APK'
+        required: true
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачать APK файл
+        run: curl -L "${{ github.event.inputs.apk_url }}" -o target.apk
+
+      - name: Установить Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Установить apktool и jadx
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apktool wget unzip
+          wget https://github.com -O jadx.zip
+          unzip jadx.zip -d jadx-bin
+          chmod +x jadx-bin/bin/jadx
+
+      - name: Декомпиляция через apktool
+        run: apktool d target.apk -o output_apktool
+
+      - name: Декомпиляция через jadx (с увеличенной памятью)
+        env:
+          JAVA_OPTS: "-Xmx6g"
+        run: ./jadx-bin/bin/jadx -j 4 -d output_jadx target.apk
+
+      - name: Упаковать и загрузить результаты
+        uses: actions/upload-artifact@v4
+        with:
+          name: decompiled-large-apk
+          path: |
+            output_apktool/
+            output_jadx/
+          compression-level: 6
+          
