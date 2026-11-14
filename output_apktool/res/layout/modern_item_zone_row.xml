@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/modern_action_row" android:layout_width="fill_parent" android:layout_height="76.0dip" android:layout_marginBottom="6.0dip" android:paddingStart="12.0dip" android:paddingEnd="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageZone" android:padding="3.0dip" android:layout_width="46.0dip" android:layout_height="46.0dip" android:contentDescription="@null" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/modern_text" android:id="@id/textZoneName" android:layout_width="180.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_marginStart="14.0dip" />
+    <FrameLayout android:background="@drawable/modern_field" android:layout_width="0.0dip" android:layout_height="54.0dip" android:layout_weight="1.0" android:layout_marginStart="12.0dip">
+        <Spinner android:gravity="center_vertical" android:id="@id/zoneSpinner" android:layout_width="fill_parent" android:layout_height="fill_parent" android:popupBackground="@color/modern_surface_high" android:spinnerMode="dialog" android:paddingStart="16.0dip" android:paddingEnd="44.0dip" />
+        <ImageView android:layout_gravity="end" android:layout_width="28.0dip" android:layout_height="fill_parent" android:src="@mipmap/drop" android:contentDescription="@null" android:layout_marginEnd="10.0dip" />
+    </FrameLayout>
+    <CheckBox android:textSize="15.0sp" android:textColor="@color/modern_text" android:gravity="center_vertical" android:id="@id/zoneCheckBox" android:layout_width="wrap_content" android:layout_height="54.0dip" android:text="@string/b_On" android:layout_marginStart="14.0dip" android:buttonTint="@color/modern_primary" />
+</LinearLayout>

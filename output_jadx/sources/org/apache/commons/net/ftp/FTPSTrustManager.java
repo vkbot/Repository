@@ -1,0 +1,26 @@
+package org.apache.commons.net.ftp;
+
+import java.security.cert.X509Certificate;
+import javax.net.ssl.X509TrustManager;
+import org.apache.commons.net.util.NetConstants;
+
+/* compiled from: r8-map-id-94e2637d1b30c6542972a7fc4ced35aa6da258c4e6702fc7c9cbf0ebc32bec75 */
+@Deprecated
+/* loaded from: classes2.dex */
+public class FTPSTrustManager implements X509TrustManager {
+    @Override // javax.net.ssl.X509TrustManager
+    public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) {
+        for (X509Certificate x509Certificate : x509CertificateArr) {
+            x509Certificate.checkValidity();
+        }
+    }
+
+    @Override // javax.net.ssl.X509TrustManager
+    public X509Certificate[] getAcceptedIssuers() {
+        return NetConstants.EMPTY_X509_CERTIFICATE_ARRAY;
+    }
+
+    @Override // javax.net.ssl.X509TrustManager
+    public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
+    }
+}

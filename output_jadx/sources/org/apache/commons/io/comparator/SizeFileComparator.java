@@ -1,0 +1,82 @@
+package org.apache.commons.io.comparator;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.Comparator;
+import java.util.List;
+import org.apache.commons.io.FileUtils;
+
+/* compiled from: r8-map-id-94e2637d1b30c6542972a7fc4ced35aa6da258c4e6702fc7c9cbf0ebc32bec75 */
+/* loaded from: classes2.dex */
+public class SizeFileComparator extends AbstractFileComparator implements Serializable {
+    public static final Comparator<File> SIZE_COMPARATOR;
+    public static final Comparator<File> SIZE_REVERSE;
+    public static final Comparator<File> SIZE_SUMDIR_COMPARATOR;
+    public static final Comparator<File> SIZE_SUMDIR_REVERSE;
+    private static final long serialVersionUID = -1201561106411416190L;
+    private final boolean sumDirectoryContents;
+
+    static {
+        SizeFileComparator sizeFileComparator = new SizeFileComparator();
+        SIZE_COMPARATOR = sizeFileComparator;
+        SIZE_REVERSE = new ReverseFileComparator(sizeFileComparator);
+        SizeFileComparator sizeFileComparator2 = new SizeFileComparator(true);
+        SIZE_SUMDIR_COMPARATOR = sizeFileComparator2;
+        SIZE_SUMDIR_REVERSE = new ReverseFileComparator(sizeFileComparator2);
+    }
+
+    public SizeFileComparator() {
+        this.sumDirectoryContents = false;
+    }
+
+    @Override // java.util.Comparator
+    public int compare(File file, File file2) {
+        long length;
+        long length2;
+        if (file.isDirectory()) {
+            if (this.sumDirectoryContents && file.exists()) {
+                length = FileUtils.sizeOfDirectory(file);
+            } else {
+                length = 0;
+            }
+        } else {
+            length = file.length();
+        }
+        if (file2.isDirectory()) {
+            if (this.sumDirectoryContents && file2.exists()) {
+                length2 = FileUtils.sizeOfDirectory(file2);
+            } else {
+                length2 = 0;
+            }
+        } else {
+            length2 = file2.length();
+        }
+        long j10 = length - length2;
+        if (j10 < 0) {
+            return -1;
+        }
+        if (j10 > 0) {
+            return 1;
+        }
+        return 0;
+    }
+
+    @Override // org.apache.commons.io.comparator.AbstractFileComparator
+    public /* bridge */ /* synthetic */ List sort(List list) {
+        return super.sort((List<File>) list);
+    }
+
+    @Override // org.apache.commons.io.comparator.AbstractFileComparator
+    public String toString() {
+        return super.toString() + "[sumDirectoryContents=" + this.sumDirectoryContents + "]";
+    }
+
+    @Override // org.apache.commons.io.comparator.AbstractFileComparator
+    public /* bridge */ /* synthetic */ File[] sort(File[] fileArr) {
+        return super.sort(fileArr);
+    }
+
+    public SizeFileComparator(boolean z9) {
+        this.sumDirectoryContents = z9;
+    }
+}

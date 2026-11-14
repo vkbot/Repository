@@ -1,0 +1,867 @@
+.class public Lorg/apache/commons/io/output/ProxyWriter;
+.super Ljava/io/FilterWriter;
+.source "r8-map-id-94e2637d1b30c6542972a7fc4ced35aa6da258c4e6702fc7c9cbf0ebc32bec75"
+
+
+# direct methods
+.method public constructor <init>(Ljava/io/Writer;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Ljava/io/FilterWriter;-><init>(Ljava/io/Writer;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+
+# virtual methods
+.method public afterWrite(I)V
+    .locals 0
+
+    .line 1
+    return-void
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+.method public append(C)Ljava/io/Writer;
+    .locals 2
+
+    const/4 v0, 0x1
+
+    .line 24
+    :try_start_0
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 25
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v1, p1}, Ljava/io/Writer;->append(C)Ljava/io/Writer;
+
+    .line 26
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p1
+
+    .line 27
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-object p0
+.end method
+
+.method public append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+    .locals 2
+
+    .line 1
+    :try_start_0
+    invoke-static {p1}, Lorg/apache/commons/io/IOUtils;->length(Ljava/lang/CharSequence;)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    .line 9
+    .line 10
+    invoke-virtual {v1, p1}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 14
+    .line 15
+    .line 16
+    return-object p0
+
+    .line 17
+    :catch_0
+    move-exception p1
+
+    .line 18
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    .line 19
+    .line 20
+    .line 21
+    return-object p0
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+.method public append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
+    .locals 2
+
+    sub-int v0, p3, p2
+
+    .line 29
+    :try_start_0
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 30
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v1, p1, p2, p3}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
+
+    .line 31
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p1
+
+    .line 32
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-object p0
+.end method
+
+.method public bridge synthetic append(C)Ljava/lang/Appendable;
+    .locals 0
+
+    .line 28
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->append(C)Ljava/io/Writer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    .locals 0
+
+    .line 22
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
+    .locals 0
+
+    .line 23
+    invoke-virtual {p0, p1, p2, p3}, Lorg/apache/commons/io/output/ProxyWriter;->append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public beforeWrite(I)V
+    .locals 0
+
+    .line 1
+    return-void
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+.method public close()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    .line 2
+    .line 3
+    new-instance v1, Lorg/apache/commons/io/input/j;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x7
+
+    .line 6
+    invoke-direct {v1, v2, p0}, Lorg/apache/commons/io/input/j;-><init>(ILjava/lang/Object;)V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-static {v0, v1}, Lorg/apache/commons/io/IOUtils;->close(Ljava/io/Closeable;Lorg/apache/commons/io/function/IOConsumer;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+.end method
+
+.method public flush()V
+    .locals 1
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/io/Writer;->flush()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+
+    .line 7
+    :catch_0
+    move-exception v0
+
+    .line 8
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+.end method
+
+.method public handleIOException(Ljava/io/IOException;)V
+    .locals 0
+
+    .line 1
+    throw p1
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+.method public write(I)V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    .line 26
+    :try_start_0
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 27
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v1, p1}, Ljava/io/Writer;->write(I)V
+
+    .line 28
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    .line 29
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-void
+.end method
+
+.method public write(Ljava/lang/String;)V
+    .locals 2
+
+    .line 30
+    :try_start_0
+    invoke-static {p1}, Lorg/apache/commons/io/IOUtils;->length(Ljava/lang/CharSequence;)I
+
+    move-result v0
+
+    .line 31
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 32
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v1, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 33
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    .line 34
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-void
+.end method
+
+.method public write(Ljava/lang/String;II)V
+    .locals 1
+
+    .line 35
+    :try_start_0
+    invoke-virtual {p0, p3}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 36
+    iget-object v0, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
+
+    .line 37
+    invoke-virtual {p0, p3}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    .line 38
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-void
+.end method
+
+.method public write([C)V
+    .locals 2
+
+    .line 1
+    :try_start_0
+    invoke-static {p1}, Lorg/apache/commons/io/IOUtils;->length([C)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    .line 9
+    .line 10
+    invoke-virtual {v1, p1}, Ljava/io/Writer;->write([C)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+
+    .line 17
+    :catch_0
+    move-exception p1
+
+    .line 18
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+.end method
+
+.method public write([CII)V
+    .locals 1
+
+    .line 22
+    :try_start_0
+    invoke-virtual {p0, p3}, Lorg/apache/commons/io/output/ProxyWriter;->beforeWrite(I)V
+
+    .line 23
+    iget-object v0, p0, Ljava/io/FilterWriter;->out:Ljava/io/Writer;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write([CII)V
+
+    .line 24
+    invoke-virtual {p0, p3}, Lorg/apache/commons/io/output/ProxyWriter;->afterWrite(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    .line 25
+    invoke-virtual {p0, p1}, Lorg/apache/commons/io/output/ProxyWriter;->handleIOException(Ljava/io/IOException;)V
+
+    return-void
+.end method
