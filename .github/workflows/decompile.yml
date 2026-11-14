@@ -1,62 +1,259 @@
-name: Decompile Large APK to Repo
+name: Find and Decrypt XOR
 
 on:
   workflow_dispatch:
-    inputs:
-      apk_url:
-        description: 'Прямая ссылка на скачивание APK'
-        required: true
 
 permissions:
   contents: write
 
 jobs:
-  decompile:
+  decrypt:
     runs-on: ubuntu-latest
     steps:
-      - name: Скачать текущий репозиторий
+      - name: Скачать репозиторий
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Необходимо для корректной работы с историей и пуша
+          fetch-depth: 0
 
-      - name: Очистить старые папки декомпиляции (если есть)
+      - name: Проверить наличие папок декомпиляции
         run: |
-          git rm -rf --cached output_apktool output_jadx || true
-          rm -rf output_apktool output_jadx
+          if [ ! -d "output_jadx" ] && [ ! -d "output_apktool" ]; then
+            echo "❌ Ошибка: папки output_jadx и output_apktool не найдены!"
+            echo "Сначала запустите workflow 'Decompile Large APK to Repo'"
+            exit 1
+          fi
+          echo "✅ Папки декомпиляции найдены"
 
-      - name: Скачать APK файл
-        run: curl -L "${{ inputs.apk_url }}" -o target.apk
-
-      - name: Установить Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Установить apktool и jadx
+      - name: Создать скрипт поиска и расшифровки XOR
         run: |
-          sudo apt-get update
-          sudo apt-get install -y apktool unzip
-          # Исправлена прямая ссылка на стабильный релиз jadx
-          wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O jadx.zip
-          unzip -q jadx.zip -d jadx-bin
-          chmod +x jadx-bin/bin/jadx
+          cat > xor_finder.py << 'EOF'
+          #!/usr/bin/env python3
+          import os
+          import re
+          import sys
+          from pathlib import Path
+          
+          def xor_decrypt(data, key):
+              """Расшифровка XOR"""
+              if isinstance(key, str):
+                  key = bytes.fromhex(key)
+              elif isinstance(key, int):
+                  key = bytes([key])
+              return bytes([data[i] ^ key[i % len(key)] for i in range(len(data))])
+          
+          def find_xor_patterns_in_java(java_dir):
+              """Поиск XOR операций и массивов байтов в Java-коде"""
+              results = []
+              
+              for root, dirs, files in os.walk(java_dir):
+                  for file in files:
+                      if file.endswith('.java'):
+                          filepath = os.path.join(root, file)
+                          try:
+                              with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                                  lines = f.readlines()
+                              
+                              # Ищем XOR операции
+                              for i, line in enumerate(lines):
+                                  if '^' in line and ('byte' in line or '0x' in line):
+                                      # Ищем массив байтов рядом (в пределах 10 строк)
+                                      context_start = max(0, i - 10)
+                                      context_end = min(len(lines), i + 10)
+                                      context = ''.join(lines[context_start:context_end])
+                                      
+                                      # Извлекаем массивы байтов
+                                      byte_arrays = re.findall(r'new\s+byte\[\]\s*\{([^}]+)\}', context)
+                                      for arr_str in byte_arrays:
+                                          hex_values = re.findall(r'0x([0-9a-fA-F]{2})', arr_str)
+                                          if hex_values:
+                                              byte_array = bytes([int(h, 16) for h in hex_values])
+                                              results.append({
+                                                  'file': filepath,
+                                                  'line': i + 1,
+                                                  'data': byte_array,
+                                                  'context': line.strip()
+                                              })
+                          except Exception as e:
+                              pass
+              return results
+          
+          def find_xor_in_smali(smali_dir):
+              """Поиск XOR в smali-коде"""
+              results = []
+              
+              for root, dirs, files in os.walk(smali_dir):
+                  for file in files:
+                      if file.endswith('.smali'):
+                          filepath = os.path.join(root, file)
+                          try:
+                              with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                                  content = f.read()
+                              
+                              # Ищем xor-int/lit8 инструкции
+                              if 'xor-int' in content or 'xor-long' in content:
+                                  # Ищем массивы данных рядом
+                                  byte_arrays = re.findall(r'fill-array-data.*?array-data\s+(.*?)\.end array-data', content, re.DOTALL)
+                                  for arr_data in byte_arrays:
+                                      hex_values = re.findall(r'(?:0x)?([0-9a-fA-F]{2})', arr_data)
+                                      if len(hex_values) > 3:
+                                          byte_array = bytes([int(h, 16) for h in hex_values[:100]])  # Ограничиваем размер
+                                          results.append({
+                                              'file': filepath,
+                                              'data': byte_array,
+                                              'context': 'smali xor operation'
+                                          })
+                          except Exception as e:
+                              pass
+              return results
+          
+          def find_byte_arrays_in_assets(assets_dir):
+              """Поиск подозрительных бинарных файлов в assets"""
+              results = []
+              
+              if not os.path.exists(assets_dir):
+                  return results
+              
+              for root, dirs, files in os.walk(assets_dir):
+                  for file in files:
+                      filepath = os.path.join(root, file)
+                      try:
+                          with open(filepath, 'rb') as f:
+                              data = f.read(1000)  # Читаем первые 1000 байт
+                          
+                          # Проверяем, не является ли это зашифрованным файлом
+                          if len(data) > 10:
+                              # Если файл не начинается с известных сигнатур
+                              if not any(data.startswith(sig) for sig in [b'PK', b'\x89PNG', b'\xff\xd8\xff', b'GIF']):
+                                  results.append({
+                                      'file': filepath,
+                                      'data': data,
+                                      'context': 'suspicious binary file'
+                                  })
+                      except Exception as e:
+                          pass
+              return results
+          
+          def auto_find_key(byte_array):
+              """Автоматический поиск ключа перебором"""
+              best_results = []
+              
+              # Перебор 1-байтных ключей
+              for key in range(256):
+                  decrypted = xor_decrypt(byte_array, key)
+                  try:
+                      text = decrypted.decode('utf-8', errors='ignore')
+                      # Проверяем читаемость
+                      printable_chars = sum(1 for c in text if c.isprintable() or c in '\n\r\t')
+                      ratio = printable_chars / max(len(text), 1)
+                      
+                      if ratio > 0.7 and len(text) > 5:
+                          best_results.append({
+                              'key': key,
+                              'key_hex': f'0x{key:02x}',
+                              'text': text[:300],
+                              'ratio': ratio
+                          })
+                  except:
+                      pass
+              
+              # Сортируем по читаемости
+              return sorted(best_results, key=lambda x: x['ratio'], reverse=True)[:5]
+          
+          def main():
+              output_dir = 'decrypted_xor'
+              os.makedirs(output_dir, exist_ok=True)
+              
+              all_findings = []
+              
+              print("🔍 Поиск XOR в Java-коде...")
+              if os.path.exists('output_jadx/sources'):
+                  java_findings = find_xor_patterns_in_java('output_jadx/sources')
+                  all_findings.extend(java_findings)
+                  print(f"   Найдено {len(java_findings)} потенциальных XOR операций")
+              
+              print("🔍 Поиск XOR в smali-коде...")
+              if os.path.exists('output_apktool'):
+                  smali_findings = find_xor_in_smali('output_apktool')
+                  all_findings.extend(smali_findings)
+                  print(f"   Найдено {len(smali_findings)} потенциальных XOR операций")
+              
+              print("🔍 Поиск подозрительных файлов в assets...")
+              if os.path.exists('output_apktool/assets'):
+                  assets_findings = find_byte_arrays_in_assets('output_apktool/assets')
+                  all_findings.extend(assets_findings)
+                  print(f"   Найдено {len(assets_findings)} подозрительных файлов")
+              
+              print(f"\n📊 Всего найдено: {len(all_findings)} объектов для анализа")
+              
+              results = []
+              
+              for i, finding in enumerate(all_findings):
+                  print(f"\n🔐 Анализ #{i+1}/{len(all_findings)}")
+                  print(f"   Файл: {finding['file']}")
+                  print(f"   Размер данных: {len(finding['data'])} байт")
+                  
+                  # Автоматический поиск ключа
+                  auto_results = auto_find_key(finding['data'])
+                  
+                  if auto_results:
+                      print(f"   ✅ Найдены возможные расшифровки:")
+                      for res in auto_results[:3]:
+                          print(f"      Ключ {res['key_hex']}: {res['text'][:80]}...")
+                      
+                      results.append({
+                          'file': finding['file'],
+                          'context': finding['context'],
+                          'auto_results': auto_results
+                      })
+                  else:
+                      print(f"   ❌ Не удалось найти читаемую расшифровку")
+              
+              # Сохранение результатов
+              with open(f'{output_dir}/xor_results.txt', 'w', encoding='utf-8') as f:
+                  f.write("=" * 80 + "\n")
+                  f.write("РЕЗУЛЬТАТЫ АВТОМАТИЧЕСКОГО ПОИСКА И РАСШИФРОВКИ XOR\n")
+                  f.write("=" * 80 + "\n\n")
+                  f.write(f"Всего проанализировано: {len(all_findings)} объектов\n")
+                  f.write(f"Успешно расшифровано: {len(results)} объектов\n\n")
+                  
+                  for i, res in enumerate(results, 1):
+                      f.write(f"\n{'=' * 80}\n")
+                      f.write(f"ОБЪЕКТ #{i}\n")
+                      f.write(f"{'=' * 80}\n")
+                      f.write(f"Файл: {res['file']}\n")
+                      f.write(f"Контекст: {res['context']}\n\n")
+                      
+                      f.write("ВОЗМОЖНЫЕ РАСШИФРОВКИ:\n")
+                      for j, ar in enumerate(res['auto_results'], 1):
+                          f.write(f"\n  Вариант {j}:\n")
+                          f.write(f"  Ключ: {ar['key_hex']} ({ar['key']})\n")
+                          f.write(f"  Читаемость: {ar['ratio']:.1%}\n")
+                          f.write(f"  Текст:\n{ar['text']}\n")
+              
+              print(f"\n✅ Результаты сохранены в {output_dir}/xor_results.txt")
+              print(f"✅ Найдено {len(results)} успешно расшифрованных объектов")
+          
+          if __name__ == "__main__":
+              main()
+          EOF
+          chmod +x xor_finder.py
 
-      - name: Декомпиляция через apktool
-        run: apktool d target.apk -o output_apktool -f
+      - name: Запустить поиск и расшифровку XOR
+        run: python3 xor_finder.py
 
-      - name: Декомпиляция через jadx
-        env:
-          JAVA_OPTS: "-Xmx6g"
-        run: jadx-bin/bin/jadx -j 4 -d output_jadx target.apk
-
-      - name: Закоммитить и отправить папки в репозиторий
+      - name: Commit и Push результатов
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output_apktool output_jadx
-          git commit -m "chore: обновить результаты декомпиляции APK" || echo "Нет изменений для коммита"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add decrypted_xor
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: автоматическая расшифровка XOR"
+            git push
+          else
+            echo "Нет изменений для коммита."
+          fi
 
-      - name: Очистить временные файлы
-        run: rm -rf target.apk jadx.zip jadx-bin
+      - name: Очистка
+        run: rm -f xor_finder.py
