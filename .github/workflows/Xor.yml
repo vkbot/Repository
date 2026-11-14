@@ -1,4 +1,4 @@
-name: Smart XOR Decrypt v2
+name: Decrypt ALL XOR Strings
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  decrypt:
+  decrypt_all:
     runs-on: ubuntu-latest
     steps:
       - name: Скачать репозиторий
@@ -15,27 +15,17 @@ jobs:
 
       - name: Проверить наличие папок
         run: |
-          if [ ! -d "output_jadx" ] || [ ! -d "output_apktool" ]; then
-            echo "❌ Сначала запустите декомпиляцию (папки output_jadx и output_apktool отсутствуют)!"
+          if [ ! -d "output_apktool" ]; then
+            echo "❌ Папка output_apktool не найдена! Сначала запустите декомпиляцию."
             exit 1
           fi
-          echo "✅ Папки найдены, начинаем анализ..."
+          echo "✅ Папка Smali найдена. Начинаем тотальный поиск..."
 
-      - name: Умная расшифровка XOR (v2)
+      - name: Тотальная расшифровка XOR через Smali
         run: |
-          cat > smart_xor_v2.py << 'PYEOF'
+          cat > decrypt_all.py << 'PYEOF'
           import os, re
-
-          def parse_bytes(byte_str):
-              # Очищаем строку от мусора: 'new byte[]', '{', '}', пробелы
-              clean = byte_str.replace('new byte[]', '').replace('{', '').replace('}', '').replace(' ', '').replace('\n', '').replace('\t', '')
-              if not clean:
-                  return b''
-              try:
-                  # Python отлично справляется с отрицательными числами: int('-29') = -29
-                  return bytes([int(x) for x in clean.split(',')])
-              except ValueError:
-                  return b''
+          from collections import defaultdict
 
           def xor_decrypt(data, key):
               result = bytearray(data)
@@ -47,79 +37,140 @@ jobs:
               except UnicodeDecodeError:
                   return result.decode('latin1').strip()
 
+          def parse_smali_file(filepath):
+              try:
+                  with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                      content = f.read()
+              except Exception:
+                  return []
+
+              # 1. Извлекаем все массивы данных (.array-data)
+              arrays = {}
+              # Ищем :array_XXX .array-data X \n ... \n .end array-data
+              array_pattern = re.compile(r':array_([a-zA-Z0-9_]+)\s*\.array-data \d+\s*((?:\s*-?\d+[a-zA-Z]*\s*)+)\s*\.end array-data', re.IGNORECASE | re.DOTALL)
+              
+              for match in array_pattern.finditer(content):
+                  label = f":array_{match.group(1)}"
+                  bytes_str = match.group(2)
+                  byte_list = []
+                  for token in bytes_str.split():
+                      # Убираем суффикс 't' (например, '107t' -> '107')
+                      clean_token = token.replace('t', '').replace('T', '')
+                      try:
+                          byte_list.append(int(clean_token))
+                      except ValueError:
+                          pass
+                  arrays[label] = bytes(byte_list)
+
+              results = []
+              lines = content.split('\n')
+              
+              # 2. Ищем вызовы методов расшифровки
+              # Поддерживаем e0/m->h, а также com/google/protobuf/q->i и q->l
+              invoke_pattern = re.compile(r'invoke-static \{(v\d+), (v\d+),.*?\}, L(?:e0/m;->h|com/google/protobuf/q;->(i|l))\(')
+              
+              for i, line in enumerate(lines):
+                  match = invoke_pattern.search(line)
+                  if not match:
+                      # Пробуем более строгий паттерн для h, если предыдущий не сработал
+                      match = re.search(r'invoke-static \{(v\d+), (v\d+)\}, Le0/m;->h\(\[B\[B\)Ljava/lang/String;', line)
+                  
+                  if match:
+                      reg1 = match.group(1)
+                      reg2 = match.group(2)
+                      
+                      data_array = None
+                      key_array = None
+                      
+                      # 3. Ищем назад до 20 строк, чтобы найти fill-array-data для этих регистров
+                      for j in range(max(0, i - 20), i):
+                          prev_line = lines[j]
+                          fill_match = re.search(r'fill-array-data (v\d+), (:\w+)', prev_line)
+                          if fill_match:
+                              reg = fill_match.group(1)
+                              label = fill_match.group(2)
+                              if reg == reg1 and label in arrays:
+                                  data_array = arrays[label]
+                              elif reg == reg2 and label in arrays:
+                                  key_array = arrays[label]
+                      
+                      # 4. Расшифровываем, если нашли оба массива
+                      if data_array and key_array and len(data_array) > 0 and len(key_array) > 0:
+                          decrypted = xor_decrypt(data_array, key_array)
+                          # Фильтр: оставляем только строки с печатными символами и длиной > 1
+                          if len(decrypted) > 1 and any(c.isprintable() for c in decrypted):
+                              results.append({
+                                  'file': filepath.replace('output_apktool/', ''),
+                                  'line': i + 1,
+                                  'decrypted': repr(decrypted)
+                              })
+              return results
+
           def main():
               os.makedirs('decrypted_xor', exist_ok=True)
-              results = []
+              all_results = []
+              smali_dir = 'output_apktool/smali'
               
-              # Гибкий regex: ловит h( new byte[]{...} , new byte[]{...} ) 
-              # или m.h( ... ), даже с переносами строк внутри
-              pattern = re.compile(r'(?:m\.)?h\s*\(\s*new\s+byte\[\]\s*\{([^}]+)\}\s*,\s*new\s+byte\[\]\s*\{([^}]+)\}\s*\)', re.MULTILINE | re.DOTALL)
-
-              java_dir = 'output_jadx/sources'
-              if not os.path.exists(java_dir):
-                  print(f"❌ Директория {java_dir} не найдена!")
+              if not os.path.exists(smali_dir):
+                  print("❌ Директория smali не найдена!")
                   return
 
+              print("🔍 Сканирование Smali файлов...")
               file_count = 0
-              for root, _, files in os.walk(java_dir):
+              for root, _, files in os.walk(smali_dir):
                   for file in files:
-                      if not file.endswith('.java'):
-                          continue
-                      file_count += 1
-                      fp = os.path.join(root, file)
-                      try:
-                          with open(fp, 'r', encoding='utf-8', errors='ignore') as f:
-                              content = f.read()
+                      if file.endswith('.smali'):
+                          file_count += 1
+                          fp = os.path.join(root, file)
+                          res = parse_smali_file(fp)
+                          all_results.extend(res)
                           
-                          for match in pattern.finditer(content):
-                              data_str = match.group(1)
-                              key_str = match.group(2)
-                              
-                              data_bytes = parse_bytes(data_str)
-                              key_bytes = parse_bytes(key_str)
-                              
-                              if len(data_bytes) > 0 and len(key_bytes) > 0:
-                                  decrypted = xor_decrypt(data_bytes, key_bytes)
-                                  
-                                  # Фильтр: длина > 1 и есть хотя бы один печатный символ
-                                  if len(decrypted) > 1 and any(c.isprintable() for c in decrypted):
-                                      line_num = content[:match.start()].count('\n') + 1
-                                      rel_path = fp.replace(java_dir + '/', '')
-                                      results.append({
-                                          'file': rel_path,
-                                          'line': line_num,
-                                          'decrypted': repr(decrypted) # repr покажет \n, \t и пробелы
-                                      })
-                      except Exception as e:
-                          print(f"⚠️ Ошибка в {fp}: {e}")
+                          if file_count % 500 == 0:
+                              print(f"   Обработано файлов: {file_count}...")
 
-              print(f"🔍 Просканировано файлов: {file_count}")
-              print(f"✅ Найдено расшифровок: {len(results)}")
-              
-              with open('decrypted_xor/real_decrypted.txt', 'w', encoding='utf-8') as out:
-                  out.write(f"✅ Успешно расшифровано: {len(results)} строк\n\n")
-                  for i, r in enumerate(results, 1):
-                      out.write(f"#{i} | {r['file']}:{r['line']}\n")
+              print(f"✅ Сканирование завершено. Всего файлов: {file_count}")
+              print(f"🔓 Найдено расшифровок: {len(all_results)}")
+
+              # Убираем дубликаты для чистоты отчёта
+              seen = set()
+              unique_results = []
+              for r in all_results:
+                  # Ключ уникальности: файл + строка + расшифрованное значение
+                  key = (r['file'], r['line'], r['decrypted'])
+                  if key not in seen:
+                      seen.add(key)
+                      unique_results.append(r)
+
+              # Сортируем по имени файла для удобства
+              unique_results.sort(key=lambda x: x['file'])
+
+              with open('decrypted_xor/ALL_decrypted.txt', 'w', encoding='utf-8') as out:
+                  out.write(f"✅ ВСЕГО НАЙДЕНО И РАСШИФРОВАНО: {len(unique_results)} уникальных строк\n\n")
+                  out.write("=" * 80 + "\n")
+                  for i, r in enumerate(unique_results, 1):
+                      out.write(f"#{i:04d} | {r['file']}:{r['line']}\n")
                       out.write(f"🔓 {r['decrypted']}\n")
-                      out.write("-" * 70 + "\n")
+                      out.write("-" * 80 + "\n")
+
+              print(f"💾 Результаты сохранены в decrypted_xor/ALL_decrypted.txt")
 
           if __name__ == "__main__":
               main()
           PYEOF
           
-          python3 smart_xor_v2.py
+          python3 decrypt_all.py
 
-      - name: Commit и Push
+      - name: Commit и Push результатов
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add decrypted_xor
           if ! git diff --staged --quiet; then
-            git commit -m "chore: умная расшифровка XOR v2 (исправлен парсинг)"
+            git commit -m "chore: тотальная расшифровка всех XOR строк из Smali"
             git push
           else
-            echo "⚠️ Изменений нет, возможно, строки уже были расшифрованы или паттерн не найден."
+            echo "⚠️ Новых расшифровок не найдено."
           fi
 
       - name: Очистка
-        run: rm -f smart_xor_v2.py
+        run: rm -f decrypt_all.py
