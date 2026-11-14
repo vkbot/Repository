@@ -1,0 +1,4255 @@
+	at 
+\nCaused by: 
+\n__JCT_POLICY_EXIT__=
+\nБортовая сеть: 
+\nВыключить → 
+\nДвигатель запущен: 
+\nЗапас хода · электро: 
+\nПробег A · электро: 
+\nСкорость автомобиля: 
+\nТекущий водитель: 
+\nШтатный расход A: 
+  Available: %s\n
+  Dalvik Heap: %s\n
+  Low Memory: 
+  Memory: %s\n
+  Native Heap: %s\n
+  Total: %s\n
+  Usage: %.1f%%\n
+  Used: %s\n
+  |  
+  ·  Экран 
+  ×
+ "
+ (
+ - 
+ -----
+ -> 
+ / 
+ 2>&1; printf '\n__JCT_POLICY_EXIT__=%s' "$?"
+ 2>&1; printf '\nexit=%s\n' "$?"
+ </dev/null >/dev/null 2>&1 &
+ ACTION_CLICK=
+ Tx: 
+ VIN: 
+ ] && settings put global policy_control 
+ actions=
+ active=
+ activeRoot=
+ ageMs=
+ allow
+ allowed=
+ autoClick=
+ availableWindow=
+ bounds=
+ bytes=
+ cancelById
+ check_failed=
+ class=
+ clickTarget=
+ click_failed=
+ clickable=
+ count=
+ default=
+ enabled=
+ encodeMs=
+ event=
+ fail=
+ failed: 
+ flags=
+ focused=
+ gate=
+ hasView=
+ id=
+ id_click
+ installById
+ installById_diagnostic
+ km/h
+ locale=
+ m
+ min
+ min, elapsed - 
+ negative 
+ nohup setsid app_process / com.example.navistart.home.LauncherWindowShell 
+ package=
+ params: 
+ permission=
+ positive 
+ posting=id_click
+ root=
+ searchText=
+ serviceFlags=
+ skip=cancel_missing_or_disabled
+ skip=event_type
+ skip=install_missing_or_disabled
+ skip=root_null
+ skip=window_class
+ state=
+ text=
+ text_click=
+ text_repeat_click=
+ transport disconnected: 
+ type=
+ visible=
+ window=
+ window_scan_failed=
+ wm=
+ x 
+ °C
+ · 
+ · бензин: 
+ · копия
+ В настройках нужного элемента включите «Оставить видимым при сворачивании».
+ градуса
+ д. 
+ забыта
+ мин
+ мин.
+ на 
+ объектов 
+ полностью
+ процентов
+ процентов 
+ сек
+ сек.
+ ч. 
+ элементов  ·  
+ — 
+!
+"
+" ?
+" }
+","aradarOn":
+","icon":"
+","speedLimit":
+"<unknown ssid>"
+"[], 
+"}
+#
+#22111111
+#88AAAAAA
+#AA111111
+#CC111111
+#CCB00020
+#DDF57C00
+#E0E0E0
+$
+%
+%.0f
+%.1f
+%.1f km
+%.1f°
+%.2f %s
+%.2f,%.2f
+%09d
+%d / %d
+%d.%d.%d.%d
+%s (id=%d, state=%s)
+%s_copy_%d%s
+&current=temperature_2m,weather_code
+&device_id=
+&format=json&accept-language=
+&r=
+'
+')
+', best='
+', matched=
+', reason=
+', score=
+'\''
+(?![\p{L}\p{M}\p{N}_])
+(?:(?:vx|j6|txl)_)?climate_(power|ac|auto|sync|recirculation|front_defrost|rear_defrost|front_glass_heat|steering_wheel_heat)_(on|off)
+(?:(?:vx|j6|txl)_)?climate_air_(.+)
+(?:(?:vx|j6|txl)_)?climate_fan_(\d+)
+(?:^|\s)(?:и|а|and)\s+(?:еще\s+)?(?:откр|закр|включ|выключ|установ|постав|запуст|заглуш|верни|переключ|open|close|turn|set|mute|unmute|toggle)\p{L}*
+(?:^|\s)(?:можешь|можете|пожалуйста|давай(?:те)?|попробуем|попробуй|прошу|будь добр|будь добра|слушай|пожалуй|please|could you|can you|would you|will you)(?=\s|$)
+(?:^|\s)(?:не мог(?:ли|ла)? бы|не можешь ли)(?=\s|$)
+(?:enum|profile):.+
+(?:enum|profile|app|split):.+
+(?:is|are|was|were) (?:open|closed|on|off)
+(?:vx_)?(open|close)_windows(?:_(full|\d+))?
+(?:window|door|trunk|glovebox):.*
+(?:вентилятор\p{L}*|обдув\p{L}*)
+(?:водител\p{L}*|пассажир\p{L}*|передн\p{L}*|задн\p{L}*|лев\p{L}*|прав\p{L}*|моего)
+(?:водительского|пассажирского|переднего|заднего|левого|правого)
+(?:подо|обо)?грев\p{L}*|подогре\p{L}*|обогре\p{L}*|погрей|нагрей|heat\p{L}*|подогрев
+(?:поехали|(?:проложи(?:ть)?|построй|построить)[\s\p{Zs},:]+маршрут)
+(?:сиден\p{L}*|сидуш\p{L}*|кресл\p{L}*)
+(?<![\p{L}\p{N}])[-−]\s*(?=\d)
+(?<![\p{L}\p{N}])\+\s*(?=\d)
+(?<![\p{L}\p{N}])нави гатор(?![\p{L}\p{N}])
+(?<![\p{L}\p{N}])прибор (ка|ку|ке|ки|кой)(?![\p{L}\p{N}])
+(?<!\p{L})(?:захлопнуть|затвори|затворить)(?!\p{L})
+(?<!\p{L})(?:кондишн|кондейчик)(?!\p{L})
+(?<!\p{L})(?:подыми|поднять)(?!\p{L})
+(?<!\p{L})(?:пожарче|жарче)(?!\p{L})
+(?<!\p{L})(?:распахни|распахнуть|отворить)(?!\p{L})
+(?<!\p{L})(?:сбавь|сбавить)(?!\p{L})
+(?<!\p{L})(?:согрей|согреть|подогреть)(?!\p{L})
+(?<!\p{L})(?:спусти|спустить)(?!\p{L})
+(?<!\p{L})багажное отделение(?!\p{L})
+(?<!\p{L})перчаточн(?:ый|ого) (?:отсек|ящик)(?!\p{L})
+(?<!\p{L})попрохладнее(?!\p{L})
+(?<!\p{L})форточк(?:а|у|е|ой)(?!\p{L})
+(?<=\p{L})-(?=\p{L})
+(?i)\.zip$
+(?iu)^(?:нет[ ,]+|точнее[ ,]+|я имел в виду[ ,]+)
+(Driver|Passenger)_Temp_(Up|Down)
+(\d+(?:[\.,]\d+)?)
+(heat|vent)_(zad_)?seat_([lr])_(off|[0-3])
+(open|close)_(trunk|glove_box)
+(open|close)_door_(front|rear)_(left|right)
+(open|close)_window_(front|rear)_(left|right)(?:_(full|\d+))?
+)
+) delta=(
+) mov=
+) screen=(
+) type=
+) viewSize=(
+) window=(
+)(?![\p{L}\p{N}])
+)(?:\s.*|$)
+)(?=\s|$)
+), speed=
+): 
+);
+){0,2} окна
+*
+*/*
++
+,
+, 
+, OnOff - 
+, Queue Size: 
+, Total threads: 
+, accepted=
+, activeAdmins=
+, admin=
+, adminActive=
+, after={
+, allowed=
+, angle=
+, answer window=
+, clearOwnerCallSucceeded=
+, clearOwnerError=
+, currentState=
+, dirType=
+, direction=
+, distance=
+, error=
+, evidence=
+, fingerprint=
+, lastWifiState=
+, latitude=
+, longitude=
+, margin=
+, message=
+, offManual - 
+, offTime - 
+, otherActionMargin=
+, recorderAlive=
+, removeAdminAttempted=
+, removeAdminCallSucceeded=
+, removeAdminError=
+, request=
+, retriesRemaining=
+, route=
+, sdk=
+, set - 
+, slots=
+, targetEnabled=
+, type=
+, versionName=
+, Температура: 
+, выключено
+, уровень 
+,"heading":
+,"lon":
+,"naviOn":
+,"nextRoad":"
+,"remainDist":
+,"speed":
+,"turnDist":
+,"turnType":
+-
+-*
+--
+--------------------------------
+--display
+--windowingMode
+-Thread-
+-apps
+-n
+.
+. 
+. Теперь выберите действие для следующего нажатия
+.*(?:^|\s)(?:включ\p{L}*|запуст\p{L}*|откр\p{L}*|вруб\p{L}*|enable|on|open|launch|start)(?:\s.*|$)
+.*(?:^|\s)(?:выключ\p{L}*|отключ\p{L}*|выруб\p{L}*|закр\p{L}*|захлоп\p{L}*|погас\p{L}*|потуш\p{L}*|затемн\p{L}*|disable|off|close|blank)(?:\s.*|$)
+.*(?:^|\s)(?:и|and)\s+(?:откр|закр|включ|выключ|позвон|набери|запуст|open|close|call|dial|turn)\p{L}*(?:\s.*|$)
+.*(?:^|\s)(?:не|нет|без|нельзя|почему|зачем|если|потом|позже|через|завтра|скажи|повтори|расскажи|вчера|not|never|dont|don't|if|later|tomorrow|say|repeat)(?:\s.*|$)
+.*(?:^|\s)(?:откр\p{L}*|закр\p{L}*|включ\p{L}*|выключ\p{L}*|запуст\p{L}*|переключ\p{L}*|установ\p{L}*|постав\p{L}*|погрей|нагрей|open|close|turn|launch|set|toggle)(?:\s.*|$)
+.*(?:^|\s)(?:открой(?:те)?|открыть|закрой(?:те)?|закрыть|включи(?:те)?|включить|выключи(?:те)?|выключить|отключи|отключить|запусти(?:те)?|запустить|покажи(?:те)?|показать|выведи(?:те)?|вывести|выводи(?:те)?|выводить|перенеси(?:те)?|перенести|переноси(?:те)?|переносить|перебрось(?:те)?|перебросить|верни(?:те)?|вернуть|вернись|перейди|сделай|сделать|переключи|переключить|установи|поставь|вруби|выруби|отобрази|возобнови|продолжи|сними|погаси|потуши|затемни|сложи|разверни|убери|прижми|раскрой|восстанови|хочу|нужно|open|close|enable|disable|turn|show|start|launch|switch|return|restore|resume|pause|go|fold|unfold)(?:\s.*|$)
+.*(?:^|\s)(?:переключ\p{L}*|switch|toggle)(?:\s.*|$)
+.*(?:^|\s)(?:прибор\p{L}*|instrument|cluster)(?:\s.*|$)
+.*(?:^|\s)(?:провер\p{L}*|проверь|оцени|оценить|осмотр\p{L}*|осмотри|посмотр\p{L}*|посмотри|почин\p{L}*|ремонт\p{L}*|отремонт\p{L}*|помой|вымой|мой|протр\p{L}*|протри|замен\p{L}*|разбей|слом\p{L}*|заблок\p{L}*|разблок\p{L}*|запри|отопри|запер\p{L}*|отпер\p{L}*|check|inspect|look|repair|fix|wash|clean|replace|break|lock|unlock|evaluate)(?:\s.*|$)
+.*(?:^|\s)(?:разлож\p{L}*|разверн\p{L}*|раскрой|unfold)(?:\s.*|$)
+.*(?:^|\s)(?:слож\p{L}*|прижми|fold)(?:\s.*|$)
+.*(?:^|\s)(?:центральн\p{L}*|central|гу)(?:\s.*|$)
+.*(?:вентиляц|ventilat|вентилятор|fan|обдув|airflow|air flow).*
+.*(?:кастом|колодц|custom).*
+.*(?:на паузу|приостанов\p{L}*|пауза|pause).*
+.*(?:ный|ний|ной|мый|ший|вший|тый|ский|цкий|овый|овой)
+.*(?:окн|окош|двер|бардач|багаж|window|door|trunk|glovebox).*
+.*(?:подогрев|обогрев|вентиляц|климат|кондиционер|рул|heat|ventilat|climate).*
+.*(?:приложен|навигат|навигац|application|navigation|(?:^| )app(?: |$)).*
+.*(?:с паузы|возобнов\p{L}*|продолж\p{L}*|воспроизвед\p{L}*|resume).*
+.*(?:температур|градус|temperature|degree).*
+.*(?:штатн|родн|заводск|обычн|стандартн|оригинальн|factory|original|standard).*
+.*maxspeed" v=["](.+?)["]
+.LauncherFileActivity
+.LauncherMainActivity
+.LauncherRadarActivity
+.LauncherStoreActivity
+.LauncherUpdateActivity
+.LauncherVideoActivity
+.LauncherWifiActivity
+.SELF_UNINSTALL_RESULT
+.UNINSTALL_RESULT
+.apk
+.backup-
+.install-
+.new
+.provider
+.zip
+/
+//
+/Android
+/FGGYRDBMOP.html
+/data.txt
+/data.zip
+/emulated
+/mnt/ext
+/mnt/external_sd
+/mnt/extsd
+/mnt/media_rw
+/mnt/media_rw/
+/mnt/runtime/
+/mnt/runtime/default
+/mnt/runtime/read
+/mnt/runtime/write
+/mnt/udisk
+/mnt/usb
+/mnt/usb_storage
+/self
+/storage
+/storage/
+/storage/ext
+/storage/extSdCard
+/storage/sdcard
+/storage/sdcard1
+/storage/udisk
+/storage/usb
+/storage/usb_storage
+0
+0 / 7
+0 B
+0%
+0% — полностью видимый, 100% — полностью прозрачный
+000
+00001101-0000-1000-8000-00805F9B34FB
+05:42
+1
+1 / 10
+1 / 2
+1. Выберите первое приложение · Листайте сетку вбок
+1. Настройте виджет   ·   2. Добавьте действия   ·   3. Расположите элементы
+10
+100
+1156
+1211
+127.0.0.1
+1350
+1400
+150
+1500
+160
+18
+2
+2 / 2
+2. Выберите второе — пара откроется\nПервое: 
+2.0.4
+20
+200
+2000
+22
+22.0°
+24
+25
+250
+26
+278
+28
+281
+290
+2F6465762F71656D755F70697065
+2F6465762F736F636B65742F71656D7564
+2F7379732F71656D755F7472616365
+2F73797374656D2F6C69622F6C6962635F6D616C6C6F635F64656275675F71656D752E736F
+2_down_new
+2_left_new
+2_right_new
+2_up_new
+3
+30
+300
+310
+350
+3_down_new
+3_left_new
+3_right_new
+3_up_new
+4
+400
+5
+50
+50% — вдвое меньше, 100% — обычный размер, 200% — вдвое больше. Масштабируется весь виджет вместе с элементами.
+6
+676F6C6466697368
+6770686F6E65
+7
+72
+72616E636875
+726F2E6861726477617265
+726F2E6B65726E656C2E71656D75
+726F2E70726F647563742E6D6F64656C
+73646B
+75
+750
+8
+8d53c51d-4f58-4f8b-a6f1-7ec48d4f8897
+9
+:
+: 
+: Temperature check - 
+: Timer check - 
+: already ready, 
+: failed to clear Device Owner
+: not applied
+: score=
+: вентиляция 
+: обогрев 
+:/mnt/media_rw
+:/storage
+:id/
+;
+; 
+<script[^>]*type=["']application/ld\+json["'][^>]*>(.*?)</script>
+<unknown ssid>
+=
+=== Memory Information ===\n\n
+===== Active Threads =====
+========== DISPLAY LIST ==========
+===========================
+=================================
+?
+?r=
+@graph
+@type
+A
+A/C
+A11Event - 
+ACTION
+ACTION_DELETE failed
+ACTION_DELETE started
+ACTION_PERFORM_EXERCISE
+ACTION_SCREEN_OFF_TIMER_DELAY
+ACTION_SCREEN_ON_TIMER_DELAY
+ACTION_UNINSTALL_PACKAGE failed
+ACTION_UNINSTALL_PACKAGE started
+AC_OFF
+AC_ON
+ADB shell недоступен
+ADB готов
+ADB недоступен
+ADB отклонил запуск команды
+ADB-соединение закрыто
+AIR_ALL
+AIR_FACE
+AIR_FACE_FEET
+AIR_FACE_GLASS
+AIR_FEET
+AIR_FEET_GLASS
+AIR_GLASS
+ANGLE
+APInAct
+APK file missing: 
+APP
+APP_WINDOW
+APP_spinner_auto_start_gu
+APm
+ARA
+ARABIC
+AS
+ASK_NAME
+AUDIO
+AUTH
+AUTO
+AUTONAVI_STANDARD_BROADCAST_RECV
+AUTONAVI_STANDARD_BROADCAST_SEND
+AUTO_OFF
+AUTO_ON
+Accept
+Accept-Language
+AccessibilityService
+AccessibilityService - OFF
+AccessibilityService - ON
+Action no longer available in current profile: 
+Activity about to start: 
+Activity не существует: 
+Additional voice phrase catalog unavailable; using original phrases
+Additional voice phrase matched: 
+Additional voice phrases loaded: 
+AlarmWinView
+AlarmingShow
+AllWidgetServices_
+AllWidgetServices_FuelRemainingView
+AllWidgetServices_FuelRemainingView_On
+AllWidgetServices_LauncherTray
+AllWidgetServices_LauncherTrayX
+AllWidgetServices_LauncherTrayY
+AllWidgetServices_SingleWindow
+AllWidgetServices_SingleWindowX
+AllWidgetServices_SingleWindowY
+AllWidgetServices_SingleWindow_On
+AllWidgetServices_StorageFreeView_On
+AllWidgetServices_Super_
+AllWidgetServices_TemperaturaMashView_On
+AllWidgetServices_dClock_On
+AllWidgetServices_mediaControlView_On
+AmapAutoDRPos
+AnalogClock
+Android
+AntiradarDatabase
+App windows are retained
+AppLogger
+AppLogs
+AppPermissionGrant
+AppStartFragment_SaveForeverApp
+AppStartFragment_loadForeverApp
+AppStartFragment_showSystemApps
+AppStoreFragment
+AppStoreFragment_CatalogCache
+Archive entry outside widget directory
+Audio processing failed
+AudioMode
+Authentication failure: wrong password
+AutoOn - Двигатель не запущен
+AutoOn - Не прошло достаточно времени с предыдущей поездки 
+AutoProfilOff
+AutoSetVodit
+B
+BACK
+BASE
+BASE64_ERROR
+BLE-связь есть, но не удалось подтвердить привязку через Chery AIoT: 
+BLE-сканер недоступен. Перезапустите Bluetooth или головное устройство.
+BLUETOOTH_CONNECT permission missing
+BLU_NAME
+BLU_NAMEВодитель 
+BOOT
+BOTTOM
+BOTTOM_LEFT
+BOTTOM_RIGHT
+BUILT_IN_APP
+BUTTON
+Background
+Backup failed
+Bad GPS presence packet
+Bad messages presence packet
+Bad reply result
+Bad transport GPS packet: 
+Bad transport message
+Bad transport remove
+BlackActClockFragment
+Blocks
+Blu_vod
+Bluetooth
+Bluetooth adapter unavailable
+Bluetooth error: 
+Bluetooth is disabled
+Bluetooth выключен. Включите Bluetooth и повторите сопряжение.
+BluetoothCommandClient
+BluetoothCommandClient_BluetoothDevice
+BluetoothCommandClient_PWD
+BluetoothCommandClient_onStart
+Bluetooth_CONNECTED - 
+Boosty Pay:
+Bridge check: 
+BroadcastSafe
+Bundled widget has no index.html: 
+CANCELLED
+CARProfile
+CATALAN
+CENTER
+CHERY_AIOT
+CHERY_ARRIZO
+CHERY_tiggo7
+CHERY_tiggo7_Lite
+CHINESE
+CHOOSE_CONTACT
+CHOOSE_NUMBER
+CLASSPATH=
+CLIMATE_AC_OFF
+CLIMATE_AC_ON
+CLIMATE_AIR_ALL
+CLIMATE_AIR_FACE
+CLIMATE_AIR_FACE_FEET
+CLIMATE_AIR_FACE_GLASS
+CLIMATE_AIR_FEET
+CLIMATE_AIR_FEET_GLASS
+CLIMATE_AIR_GLASS
+CLIMATE_AUTO_OFF
+CLIMATE_AUTO_ON
+CLIMATE_FAN_1
+CLIMATE_FAN_10
+CLIMATE_FAN_2
+CLIMATE_FAN_3
+CLIMATE_FAN_4
+CLIMATE_FAN_5
+CLIMATE_FAN_6
+CLIMATE_FAN_7
+CLIMATE_FAN_8
+CLIMATE_FAN_9
+CLIMATE_FRONT_DEFROST_OFF
+CLIMATE_FRONT_DEFROST_ON
+CLIMATE_POWER_OFF
+CLIMATE_POWER_ON
+CLIMATE_SYNC_OFF
+CLIMATE_SYNC_ON
+CLOCK
+CLOSE
+CLOSE 
+CLOSE_ALL_DOORS
+CLOSE_CENTRAL_LOCK
+CLOSE_DOOR_FRONT_LEFT
+CLOSE_DOOR_FRONT_RIGHT
+CLOSE_DOOR_REAR_LEFT
+CLOSE_DOOR_REAR_RIGHT
+CLOSE_SHTORKA
+CLOSE_TRUNK
+CLOSE_WINDOWS
+CLOSE_WINDOW_FRONT_LEFT
+CLOSE_WINDOW_FRONT_RIGHT
+CLOSE_WINDOW_REAR_LEFT
+CLOSE_WINDOW_REAR_RIGHT
+CLSE
+CM_height
+CM_leftMargin
+CM_topMargin
+CM_width
+CNXN
+CONFIRM
+CONNECTING
+COOLE
+CREATE TABLE IF NOT EXISTS TrafficData (IDX INTEGER PRIMARY KEY, X REAL, Y REAL, TYPE INTEGER, SPEED INTEGER, DIRTYPE INTEGER, DIRECTION INTEGER, DISTANCE INTEGER, ANGLE INTEGER)
+CUSTOM_CMD
+CZECH
+Cannot access paired devices: 
+Cannot apply mock location
+Cannot back up installed widget
+Cannot calculate transport authentication
+Cannot change this package without changing other apps
+Cannot configure window touch region
+Cannot create directory
+Cannot create display
+Cannot create staging directory
+Cannot create widget directory
+Cannot enable mock provider: 
+Cannot install widget
+Cannot move widget file
+Cannot notify launcher ready
+Cannot prepare 
+Cannot read bundled widget 
+Cannot read designs
+Cannot read widget directory
+Cannot refresh scan results without location permission
+Cannot remove wrapper directory
+Cannot send navigation result
+Car link restored; web car requests resumed
+Car link unavailable; web car requests paused
+CarControlActivity
+CarManager
+CarSettingEX
+Catalog phrase matched: 
+Chery AIoT
+Choose language
+ClearIncomingApks
+ClearQueue [
+Conflicting exact user phrases; refusing to guess
+Connected
+Connected and authenticated
+Connected successfully
+Connected via 
+Connecting to 
+Connection closed
+Connection failed: 
+Connection interrupted
+Connection lost: 
+Connection timed out after 5 s: 
+Content-Type
+Could not close semantic session
+Could not prepare semantic candidates
+Could not write semantic cache
+CrashHandler
+Current Process:\n
+Current_Media_Controller
+DClock
+DEF
+DEFAULT_RUSSIAN
+DELETE FROM TrafficData
+DIAL
+DIRECTION
+DIRTYPE
+DISCONNECTED
+DISCOVERING
+DISTANCE
+DONE
+DOWN
+DOWN raw=(
+DOZE
+DOZE_SUSPEND
+DPups
+DRIVE_MODE_ECO
+DRIVE_MODE_NORMAL
+DRIVE_MODE_SPORT
+DROP TABLE IF EXISTS TrafficData
+DUTCH
+DataProcessor
+DataUpdateAradarDB
+DeadObjectException
+DeadSystemException
+Del: 
+Device Owner Disabled
+Device Owner Enabled
+DeviceAdmin
+DevicePolicyManager is null
+DisplayManager == null
+Displays: 
+Driver
+Driver_Monitoring_System
+Driver_Temp_Down
+Driver_Temp_Up
+Drops
+EAP
+EEE, d MMMM
+ENABLING_NOTIFICATIONS
+END
+ENG
+ENGINE_3
+ENGINE_4
+ENGINE_5
+ENGINE_SCREEN_ON_RUN
+ENGLISH_US
+ENSURE
+ENSURE 
+ENUM
+ERR
+ERROR
+ERROR 
+ERROR Input rejected
+ERROR Unknown command
+ERROR: 
+ESP
+ESPERANTO
+ESTEO_ET8
+ESTEO_V27
+EXLANTIXET
+EXTERNAL_APP
+EXTERNAL_APP_HUDSPEED
+EXTERNAL_APP_STR
+EXTRA_STATE
+Empty widget archive
+Endpoint =
+English
+Error
+Error - 
+Error addView - 
+Error transferring APK to session
+Error!
+Error:
+Español
+Exact additional phrase matched: 
+Exact manual command matched: 
+Exception
+Exception: 
+ExceptionWEB
+ExecutorProvider
+Exeed_TXL
+Exeed_VX24
+Exeed_VX_MX
+Exercise
+ExerciseIntentService
+Exlantix 
+Exlantix ET
+External Storage (SD Card):\n
+FAILED
+FAILED_TRANSACTION
+FAN_0
+FAN_1
+FAN_10
+FAN_2
+FAN_3
+FAN_4
+FAN_5
+FAN_6
+FAN_7
+FAN_8
+FAN_9
+FAQPage
+FARSI
+FC_bottomMargin
+FC_height
+FC_leftMargin
+FC_width
+FOCUS
+FOLD_MIRRORS
+FRA
+FRENCH
+FRONT_DEFROST_OFF
+FRONT_DEFROST_ON
+Failed to grant notification listener permission: 
+Failed to nudge Wi-Fi reconnect: 
+Failed to remove one or more active admins
+Failed to send broadcast: 
+FallbackWeatherProvider: 
+Fast command matched: 
+FloatingLauncherAction
+Found method: 
+Fragment class not found: 
+Français
+FuelRemainingView
+FuelWidget
+Full recognition cancelled by voice command
+Full recognition combined='
+Full recognition timeout
+FullscreenApps
+GAI
+GB
+GEELY
+GEELY_E8
+GERMAN
+GESTURE
+GESTURE_2_FINGER_SWIPE_DOWN
+GESTURE_2_FINGER_SWIPE_LEFT
+GESTURE_2_FINGER_SWIPE_RIGHT
+GESTURE_2_FINGER_SWIPE_UP
+GET
+GETMusicInfoProxy
+GGA
+GLOBAL_BACK
+GLOBAL_HOME
+GO_CPP_TO_PP
+GO_DEF_TO_PP
+GO_TO_GU
+GO_TO_PP
+GPS Server discovered at 
+GPS Server unavailable: 
+GPSManager
+GPSSender_GO_TRUE
+GPSSignalQuality
+GRID
+GS_height
+GS_leftMargin
+GS_topMargin
+GS_width
+GUJARATI
+Gesture ended
+Gesture started
+GestureZoneManager
+Go_Fuul
+GpsNotifier
+GpsServerSource
+GrantPermissionsActivity
+HAVAL
+HEAT
+HEAT_DRIVER
+HEAT_PASSENGER
+HH:mm
+HH:mm:ss
+HINDI
+HORIZONTAL
+HUD - Stop
+HUD Icon Index - 
+HUDNaviOnOff
+HUDProcessing
+HUD_AM
+HUD_AZ
+HUD_BY
+HUD_DE
+HUD_ES
+HUD_GE
+HUD_KZ
+HUD_Message: 
+HUD_RS
+HUD_RU
+HUD_TR
+HUD_UA
+HUD_UZ
+Handshake challenge received via 
+Handshake denied by phone: shared token does not match
+Handshake denied: phone proof does not match
+Heat
+HeatRearwindow
+HeatSeat
+HeatWheel
+HeatWindshield
+Helper authentication failed
+Helper disconnected
+HmacSHA256
+Hotspot did not disable in time, continuing with standard Wi-Fi enable
+Hotspot is active, disabling AP before enabling Wi-Fi client mode
+IDLE
+IDLE (свободно)
+IDX
+ID_AC_FRONT_GLASS_HEAT
+ID_AC_FRONT_GLASS_HEAT_TEMP
+ID_AC_FRONT_GLASS_HEAT_TIMER
+ID_AC_FRONT_GLASS_HEAT_time_delay_OFF
+ID_AC_REAR_DEFROST
+ID_AC_REAR_DEFROST_TEMP
+ID_AC_REAR_DEFROST_TIMER
+ID_AC_REAR_DEFROST_time_delay_OFF
+ID_CAR_CIR_ENA_STS
+ID_CAR_COPILOT_SEAT_HEAT
+ID_CAR_COPILOT_SEAT_HEAT_MOSH
+ID_CAR_COPILOT_SEAT_HEAT_TEMP
+ID_CAR_COPILOT_SEAT_HEAT_TIMER
+ID_CAR_COPILOT_SEAT_HEAT_time_delay_OFF
+ID_CAR_COPILOT_SEAT_VENTILATION
+ID_CAR_COPILOT_SEAT_VENTILATION_MOSH
+ID_CAR_COPILOT_SEAT_VENTILATION_TEMP
+ID_CAR_COPILOT_SEAT_VENTILATION_TIMER
+ID_CAR_COPILOT_SEAT_VENTILATION_time_delay_OFF
+ID_CAR_DRIVER_SEAT_HEAT
+ID_CAR_DRIVER_SEAT_HEAT_MOSH
+ID_CAR_DRIVER_SEAT_HEAT_TEMP
+ID_CAR_DRIVER_SEAT_HEAT_TIMER
+ID_CAR_DRIVER_SEAT_HEAT_time_delay_OFF
+ID_CAR_DRIVER_SEAT_VENTILATION
+ID_CAR_DRIVER_SEAT_VENTILATION_MOSH
+ID_CAR_DRIVER_SEAT_VENTILATION_TEMP
+ID_CAR_DRIVER_SEAT_VENTILATION_TIMER
+ID_CAR_DRIVER_SEAT_VENTILATION_time_delay_OFF
+ID_CAR_FCM_EMERGENCY_KEEY
+ID_CAR_FCM_FRM_DAI_ON_OF
+ID_CAR_FCM_IES_ON_OFF
+ID_CAR_FCM_INHIBIT
+ID_CAR_LDW
+ID_CAR_OPPOSITION_SWITCH
+ID_CAR_SPD_LIMIT_WARN_SET
+ID_CAR_STEER_WHEEL_HEAT
+ID_CAR_STEER_WHEEL_HEAT_TEMP
+ID_CAR_STEER_WHEEL_HEAT_TIMER
+ID_CAR_STEER_WHEEL_HEAT_time_delay_OFF
+ID_CAR_SUNSHADE
+ID_CAR_SUNSHADE_OPEN
+ID_SPD_LIMIT_VALUE_CHANGE
+INSERT OR REPLACE INTO TrafficData (IDX, X, Y, TYPE, SPEED, DIRTYPE, DIRECTION, DISTANCE, ANGLE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+INSTALL
+ITA
+ITALIAN
+Ignoring malformed transport frame
+Initial phone state unavailable; awaiting connection event or call request
+Install
+Install failed; original preserved at 
+InstallA11y
+Installation done
+Intent incomplete; checking semantic candidates before clarification: 
+Internal Storage:\n
+Invalid component
+Invalid coordinates
+Invalid intent key
+Invalid package
+Invalid phrase key
+Invalid settings response
+Invalid voice alias action: 
+Invalid voice intent descriptor
+Invalid widget name
+Invalid widget path
+Italiano
+JAECOOJ6
+JAECOO_J7
+JAECOO_J7_URBAN
+JAECOO_J7_YAN
+JAECOO_J8
+JAPANESE
+JCT
+JCT launcher windows
+JCT-shortcut-cleanup
+JCT-window-
+JCT2|
+JCT_READY
+JCT_UNIFIED_TRANSPORT_V2
+JCarTools
+JCarTools-NativeLauncher
+JCarToolsApp/1.0
+JETOURT2
+JP
+JSON ошибка
+Jaecoo J7
+Jaecoo J8/Exeed RX
+JctTransport
+JctTransport Bluetooth: 
+Jetour T2
+KAZAKH
+KB
+KEY_TYPE
+KOREAN
+LAUNCH
+LEFT
+LEFT_BOTTOM
+LEFT_TOP
+LINE
+LISTENING
+LOAD
+LOADING
+LOAD_TIMEOUT
+Launcher app windows
+Launcher reset in progress
+LauncherAppWindow
+LauncherFileActivity
+LauncherStoreActivity
+LauncherTray
+LauncherVideoActivity
+LocServ
+Log file is invalid or cannot be read.
+Log sent successfully.
+LogData
+LounchB
+LounchBTrue
+LounchB_set
+LounchB_set_new
+MATCH
+MAX стекло
+MAX_DIST_AFTER_PASS
+MB
+MB, Active Threads: 
+MEDIA_BLACK
+MEDIA_NEXT
+MEDIA_PAUSE
+MEDIA_PLAY
+MEDIA_PLAY_PAUSE
+MIN_SPEED_ALARM
+MOVE raw=(
+MUSIC
+MainActivity
+Malformed protobuf message
+Manifest
+MapFragment
+Map_Activity_DPI
+Map_Activity_DPI_GU
+Map_Activity_FULLSCREEN_GU
+Map_Activity_MAX_PERFORMANCE
+Mash
+Mash_nartemp
+MaxAudioAgeMs
+MaxDecodeCpuMs
+MaxDecodeMs
+MediaController - 
+MediaController - NULL
+MediaRecorder.AudioSource
+MessageData: 
+Mini-map listener rejected cached frame
+Mini-map listener rejected frame
+MiniMapFrameSource
+MiniMapPerf
+MockGPS_auto_fallback
+MockGPS_autostart
+MockGPS_host
+MockGPS_port
+MockGPS_source_type
+MockGpsProvider
+MockGpsService
+ModemGpsSource
+MountedStorageMonitor
+MoveView [
+Mozilla/5.0 (Linux; Android 12; JCarTools) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36
+Msg
+MusicInfoProxy
+MyA11yService
+MyA11yService - onCreate
+MyApplication
+MyCarReceiver
+MyCarReceiverRun
+MyReceiverJ
+MyReceiverJT2
+MyWebProjectBlack
+MyWebProjectBlack/default_web_black/index.html
+MyWebProjectBlack_Settings_Key
+MyWebProjectBoard
+MyWebProjectHUD
+MyWebProjectHUD_Settings_Key
+MyWebProjectLauncher
+MyWebProjectLauncher_Settings_Key
+N/A
+NAVI_1
+NAVI_2
+NEXT
+NLService
+NOT_AVAILABLE
+NOT_FOUND
+NO_CONTACTS
+NO_NUMBER
+NS
+NativeLauncherAction
+NativeWallpaperImport
+NaviStartService
+Navigation request failed
+NavigationReceiver
+Navigator mini-map service is unavailable
+No Display
+No TXL action icon for 
+No VX action icon for 
+No paired device selected
+No response from phone for 7 s
+Non-positive value specified as a major tick step.
+Non-positive value specified as a speed.
+Non-positive value specified as max speed.
+Not a launcher display
+Not_Run_APP
+Not_value
+Notification Removed: 
+Notification listener already granted.
+Notification listener permission granted.
+Notik
+Notik_LOCK
+OFF
+OFFHOOK
+OFFHOOK (разговор)
+OK
+OKAY
+OMODAC7
+ON
+OPEN
+OPEN_CENTRAL_LOCK
+OPEN_CLIMATE
+OPEN_DOOR_FRONT_LEFT
+OPEN_DOOR_FRONT_RIGHT
+OPEN_DOOR_REAR_LEFT
+OPEN_DOOR_REAR_RIGHT
+OPEN_ENERGY_MANAGEMENT
+OPEN_FUEL_TANK
+OPEN_GLOVE_BOX
+OPEN_METEO
+OPEN_SHTORKA
+OPEN_TELEMETRY
+OPEN_TRUNK
+OPEN_WINDOWS_10
+OPEN_WINDOWS_20
+OPEN_WINDOWS_50
+OPEN_WINDOWS_80
+OPEN_WINDOWS_FULL
+OPEN_WINDOW_FRONT_LEFT_10
+OPEN_WINDOW_FRONT_LEFT_20
+OPEN_WINDOW_FRONT_LEFT_80
+OPEN_WINDOW_FRONT_LEFT_FULL
+OPEN_WINDOW_FRONT_RIGHT_10
+OPEN_WINDOW_FRONT_RIGHT_20
+OPEN_WINDOW_FRONT_RIGHT_80
+OPEN_WINDOW_FRONT_RIGHT_FULL
+OPEN_WINDOW_REAR_LEFT_10
+OPEN_WINDOW_REAR_LEFT_20
+OPEN_WINDOW_REAR_LEFT_80
+OPEN_WINDOW_REAR_LEFT_FULL
+OPEN_WINDOW_REAR_RIGHT_10
+OPEN_WINDOW_REAR_RIGHT_20
+OPEN_WINDOW_REAR_RIGHT_80
+OPEN_WINDOW_REAR_RIGHT_FULL
+ORIGIN_THREAD|
+OWE
+OffBez - 
+OffH - 
+On
+OnOffAuto
+OpenMeteoProvider: 
+Optional voice vocabulary unavailable; retaining exact phrases
+Options cannot be null
+OverlayAlpha_prozrachnost
+OverlayService
+OverlayServiceStart
+PAIRED
+PARKING_SENSORS_ON
+PAUSE
+PBKDF2WithHmacSHA256
+PEDESTRIAN_CHECKBOX
+PERMISSION_DENIED
+PING
+PLAY
+POL
+POLISH
+PORTUGUESE
+POST
+POWER_OFF
+POWER_ON
+PSK
+PUT_YLoviy
+PUT_YLoviy_GET
+PackageInstaller uninstall failed
+PackageInstaller uninstall fallback, state: 
+PackageInstaller uninstall requested
+Paired device not found: 
+ParkAutoOnSpeed
+ParkOnSpeedValue
+Passenger_Temp_Down
+Passenger_Temp_Up
+Pending user action for 
+PendingIntentRun - 
+PendingIntentSave - 
+PermManager
+PermissionGrantor
+Phone authentication failed
+Phone challenge received; verifying token
+Phone connection observation unavailable; loading on demand
+Phone rejected shared token
+PhoneAppGpsSource
+PlayStat
+Policy too large for this transport
+Policy verification failed
+Polski
+Power_Manager_Wake_Off
+Power_Manager_Wake_Up
+ProSW
+ProgressActivity
+QRXN
+QueuePeak
+R.
+RADIUS
+RAM:\n
+READY
+REBOOT_OS_RUN
+RECENT_TASK_MANAGER
+RED_LIGHT_CHECKBOX
+REJECT
+REQUESTING_DEVICE_BIND
+REQUESTING_DEVICE_DATA
+RESTART_ACCESSIBILITY_SERVICE
+RIGHT
+RIGHT_BOTTOM
+RIGHT_TOP
+RINGING
+RINGING (входящий): 
+RMC
+ROTATION_0
+ROTATION_180
+ROTATION_270
+ROTATION_90
+RSA
+RSA/ECB/NoPadding
+RSm
+RUN_ACTION_BOOT
+RUN_ACTION_ENGINE_STATE_OFF
+RUN_ACTION_ENGINE_STATE_ON
+RUN_ACTION_SCREEN_ON
+RUN_ACTIVITY_UNI
+RUN_APP_MORE
+RUN_BLACK
+RUN_DIALOG_UNI
+RUN_ENGINE_SCREEN_ON
+RUN_FUN_CAR
+RUN_JCT_FILE
+RUN_JCT_LAUNCHER
+RUN_JCT_RADAR
+RUN_JCT_STORE
+RUN_JCT_VIDEO
+RUN_JCT_WIFI
+RUN_SPICH_FOCUS
+RUN_START_APP_MENU
+RUS
+Range
+Raw
+Read fuel level
+RebootCheckerPrefs
+Receive android.intent.action.BOOT_COMPLETED
+Recirculation_Off
+Recirculation_On
+Recognition processing failed
+Recognition queue overflow; oldest audio dropped
+Recording watchdog failed
+Recording watchdog restart: taskAlive=
+Remote GPS applied
+Remote GPS peer unavailable: 
+RemoteException
+Remove touch region
+Replaced stale mini-map listeners=
+Request Wi-Fi enabled=
+Requested Wi-Fi reconnect after enabling client mode
+Reset_Сounters_Auto_ON
+Response body is null
+Reused existing mock provider after reconnect: 
+RunEnum
+RunEnumPic
+RunEnumText
+RunEnumType
+Rx: 
+S
+SAE
+SCANNING
+SEAT_HEAT_DRIVER
+SEAT_HEAT_PASSENGER
+SEAT_VENT_DRIVER
+SEAT_VENT_PASSENGER
+SECURE_TOKEN_2025
+SELECT * FROM TrafficData
+SENDING_BIND_RESULT
+SENT
+SHA-512
+SMR
+SOUEASTS07
+SPANISH
+SPEECH_CLIENT_1
+SPEECH_CLIENT_3
+SPEECH_CLIENT_HMI
+SPEECH_CLIENT_J7
+SPEECH_CLIEN_2
+SPEED
+SPEED_BOARD
+SPEED_CHECKBOX
+SPLIT
+SPLIT_AppStartFragment_SaveForeverApp
+SPLIT_ORIENT
+SPLIT_RATIO
+SPLIT_RUN
+START
+STARTING
+START_STOP_OFF
+STOPPED
+SVAssist-PmCompatP
+SWITCH
+SYNC
+SYNC_OFF
+SYNC_ON
+SYSmsg-BRC
+Save
+Seat read
+Security exception
+SecurityException: 
+Semantic cache is not usable
+Semantic candidates loaded from cache: 
+Semantic candidates prepared: 
+Semantic command matched: 
+Semantic decision: 
+Semantic model is not installed
+Semantic precheck rejected: evidence=
+Semantic query failed
+SetDriveMode - 
+SetPowerMode - 
+Settings command failed
+Si
+SignalQualityView
+Single pointer only
+SingleWindow
+SingleWindowWidget_recent
+Socket connected to 
+SongAlbum
+SongAlbumPicture
+SongArtist
+SongName
+Speed: 
+SpeedBoardActi
+SpeedBoardActiSettings_GPS
+SpeedBoardService
+SpichEngine3
+SpichEngine4
+SpichEngine5
+Split installation done
+Split mode failed - 
+Start Activity
+StartAccessibilityEnable
+StorageFreeView
+StorageManager
+StorageManager:/mnt/media_rw
+StorageManager:/storage
+StorageManager:getVolumeList
+StorageManager:getVolumes:internalPath
+StorageManager:getVolumes:path
+Success for 
+SuperWidgets
+Suppressed in chain: 
+SystemMessageReceiver
+SystemMessageReceiver - 
+SystemMessageReceiver - Start
+TAGALOG
+TB
+TENET_T8
+TEST
+TOGGLE
+TOGGLE_CPP_PP
+TOGGLE_GU_PP
+TOGGLE_GU_PP_CPP
+TOGGLE_MOCK_GPS
+TOO_MANY
+TOP
+TOUCH
+TOUCH 
+TRACE
+TUR
+TURKISH
+TYPE
+Task removal rejected
+Tasks are still present
+TemperaturaMashView
+TestSpace
+The content of the adapter has changed
+Thread: 
+Tiggo 7, 8
+TimeDalayHeat_datchiknarug_ON
+TimeDalayHeat_ot_carstart
+TimeDalay_On_Off_SCREEN
+TimerHeat
+TimerUpdate
+Timestamp: 
+Title
+Total displays: 
+TotalDecodeCpuMs
+TotalDecodeMs
+Touch exploration started
+TrafficObject{idx=
+Transaction failed
+Transport channel is empty
+Transport connection cycle failed; retrying
+Transport disconnected
+Transport heartbeat failed; keeping lifecycle alive
+Transport lease is closed
+Transport lifecycle started
+Transport lifecycle stopped
+Transport peer timed out; reconnecting
+Transport token must contain exactly 9 digits
+Trdur
+Trpos
+TunService
+Türkçe
+UNAVAILABLE
+UNFOLD_MIRRORS
+UNHANDLED
+UNINSTALL
+UNSELECTED
+UNSUPPORTED
+UP
+UP raw=(
+UPDATE ok target=(
+USB
+USB GPS unavailable: 
+USB: 
+UTC
+UTF-8
+UZBEK
+Unable to change media mute
+Unable to enumerate local interfaces: 
+Unable to open PHEV energy management
+Unable to ping Navigator
+Unable to publish GPS demand
+Unable to publish GPS presence
+Unable to publish messages presence
+Unable to publish music data
+Unable to queue transport message
+Unable to read mini-map frame
+Unable to read phone connection state
+Unable to send message reply
+Unable to set mini-map theme
+Unable to start application services
+Unavailable
+Unexpected code 
+Unsafe phrase
+Unsafe voice alias: 
+Unsupported file type: 
+Unsupported transport version: 
+Unsupported voice alias catalog version
+Up
+Update
+UpdateAPP
+UsbGpsSource
+User-Agent
+UserAppsHide
+UserAppsHideAdb
+UserFileManagerFolderSize
+UserFileManagerFragment
+UserFileManagerTextPreview
+UtilsAll
+VENT_DRIVER
+VENT_PASSENGER
+VERTICAL
+VIBOR_VODITEL
+VIETNAMESE
+VIEW_ALL_MESSAGE
+VJCT_Service_View
+VJCT_Service_View_visible
+VentSeat
+Version: 
+VibVodActivity
+ViewGroupLogger
+ViewModelDispatcher is not initialized
+Visible
+Vocabulary version
+Voice recording initialization failed
+VoiceDiag 
+VoicePhoneBook
+Volume_Down
+Volume_Mute_
+Volume_Mute_Off
+Volume_Mute_On
+Volume_Mute_Toggle
+Volume_Up
+Vosk model is not installed
+W
+WAITING_BIND_FRAME
+WALLPAPER
+WEATHER
+WEP
+WG_VPN.conf
+WINDOWS_CLOSE_ALL
+WINDOWS_OPEN_ALL
+WINDOWS_VENT_ALL
+WINDOW_DRIVER_CLOSE
+WINDOW_DRIVER_OPEN
+WINDOW_DRIVER_VENT
+WINDOW_PASSENGER_CLOSE
+WINDOW_PASSENGER_OPEN
+WINDOW_PASSENGER_VENT
+WINDOW_REAR_LEFT_CLOSE
+WINDOW_REAR_LEFT_OPEN
+WINDOW_REAR_LEFT_VENT
+WINDOW_REAR_RIGHT_CLOSE
+WINDOW_REAR_RIGHT_OPEN
+WINDOW_REAR_RIGHT_VENT
+WRTE
+Waze
+WeatherService
+WebCarRequest
+WebJsApi
+WebLauncherActivity
+WebLauncherCatalog
+WebPage
+WebWidgetTools
+WebWidgetView
+Wi-Fi
+Wi-Fi toggle failed. targetEnabled=
+Wi-Fi toggle stuck, running soft retry. targetEnabled=
+WiFi
+WiFi включен
+WiFi менеджер не найден
+WiFi прямое включение: 
+WiFi уже включен
+WidgetTouchRegion
+WifiLauncher
+WifiToggleHelper
+WindowLayoutCoordinator
+WindowManager unavailable
+Windowing mode failed - 
+Write session failed
+X
+Y
+Y.lay.guide
+Y.maneuver.guide
+Y.maneuver.vis
+YANDEX_WEB
+YM_20.2
+YM_20.2_test
+YMapsList
+YN_1.6
+YN_7.1
+YReceiver
+YReceiverCamVisible
+YandexWebWeatherProvider: 
+ZIP write failed
+ZIP файл скачан: 
+ZaglushkaActivity
+[
+[()\s-]
+[+-]?\d+(?:\.\d+)?
+[+-]?\d+(?:\.\d+)?%?|ноль|один|одна|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|zero|one|two|three|four|five|six|seven|eight|nine|ten
+[+0-9()\s-]+
+[+]\d+|минус|плюс|minus|plus
+[0-6]
+[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+
+[\\/:*?"<>|]
+[\s\p{Zs},:]+
+[\s\p{Zs}\p{P}]*
+[\s\p{Zs}\p{P}]*(?:до|к|ко|в|во|на)[\s\p{Zs}\p{P}]*
+[\s\p{Zs}]
+[\s]
+[]
+[^\p{L}\p{N}.%+\-]+
+[^\p{L}\p{N}]+
+[^a-z0-9._-]
+[a-zA-Z0-9_.$]+/[a-zA-Z0-9_.$]+
+[closeQuietly]: e：
+[installSilence] apk not exist, so return.
+[unk]
+[а-я]{3,}
+[а-я]{3,}(?:й|йте|ни|ните|ри|рите|зи|зите|ши|шите|[лнрв]ь|[лнрв]ьте|ть|ти|чь)
+\
+\'
+\+?[0-9]{5,15}
+\.
+\.(?!\d)
+\?$
+\A[\s\p{Zs}]*(?:(?:давай(?:[\s\p{Zs},:]+пожалуйста)?|пожалуйста)[\s\p{Zs},:]+)?(?:поехали|(?:проложи(?:ть)?|построй|построить)[\s\p{Zs},:]+маршрут)(?![\p{L}\p{M}\p{N}_])(?:[\s\p{Zs},:]+пожалуйста(?![\p{L}\p{M}\p{N}_]))?
+\\
+\d+
+\d+(?:\.\d+)?-\d+(?:\.\d+)?|полтора|полторы|несколько
+\d{9}
+\n
+\p{L}+
+\r?\n
+\s
+\s+
+\s+(.+?),\s*температура воздуха
+]
+] 
+]!!!
+]: [
+]=
+^(?:(?:уровень|скорость|level|speed)(?: (?:на|to))?|на|to)\s+
+^(?:(?:хочу|нужно|надо|прошу|мне|ты|i want to|i need to|i would like to)\s+)+
+^(?:а|ну)\s+
+^(?:номер|вариант|number|option)\s+
+^(?:откр\p{L}*|закр\p{L}*|включ\p{L}*|выключ\p{L}*|запуст\p{L}*|сдела\p{L}*|установ\p{L}*|постав\p{L}*|переключ\p{L}*|покаж\p{L}*|погрей|open|close|turn|launch|set|toggle|show)(?:\s.*)?$
+^(?:открой|открыть|запусти|запустить|покажи|open|launch|start)\s+(?:(?:приложение|app)\s+)?
+^(?:позвони(?:те)?|позвонить|набери(?:те)?|набрать|сделай звонок|соверши звонок|call|dial)(?:\s+(?:контакту|контакт|номер|contact|to))?\s*
+^(?:позвони(?:те)?|позвонить|набери(?:те)?|набрать|сделай звонок|соверши звонок|call|dial)(?:\s.*)?$
+^(enum:|profile:)
+^[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}$
+^[A-HJ-NPR-Z0-9]{17}$
+^Какая погода в\s+
+^Сейчас в\s+
+_
+_MOSH
+_ON
+_On
+_TEMP
+_TIMER
+_TIMER_DELAY
+_display_name
+_final
+_heat_
+_id
+_id ASC
+_id IN (
+_off
+_on
+_time_OFF
+_time_delay_OFF
+_vent_
+a/c
+abf1 service not found
+abf2 characteristic not found
+about:blank
+ac
+accepted
+acceptedAnswer
+accessibility
+accessibility_enabled
+accuracy
+ack
+action
+action2
+actionIcons
+action_
+action_dispatch
+action_ignored
+action_or_value_unavailable
+action_or_value_unavailable:
+action_or_value_unavailable:seat
+action_returned
+action_unavailable
+actions
+activation
+activationFinal
+activation_failed
+active
+active_care
+activity
+adb
+adb_client_test
+adbkey
+adbkey.pub
+addOnComputeInternalInsetsListener
+addView returned wm=
+address
+air.StrelkaHUDFREE
+air:
+airMode
+airflow_parameter_not_supported
+akbvolt
+alarm
+alarm service unavailable
+alias
+alias_exact
+alignedCollapsedPanelHeight
+alignedCollapsedSquareSize
+alignedPanelHeight
+alignedSquareSize
+all
+all the way
+allowed
+alpha
+altitude
+am
+ambiguous_airflow_direction
+ambiguous_closing_amount
+ambiguous_group
+ambiguous_score
+ambiguous_unit
+amount
+android.
+android.app.ActivityTaskManager
+android.app.Dialog
+android.app.IActivityTaskManager
+android.app.role.HOME
+android.bluetooth.adapter.action.STATE_CHANGED
+android.bluetooth.adapter.extra.STATE
+android.bluetooth.device.action.ACL_CONNECTED
+android.bluetooth.device.action.ACL_DISCONNECTED
+android.bluetooth.device.extra.DEVICE
+android.content.pm.extra.STATUS
+android.content.pm.extra.STATUS_MESSAGE
+android.hardware.display.DisplayManagerGlobal
+android.hardware.input.InputManager
+android.hardware.usb.action.USB_ACCESSORY_ATTACHED
+android.hardware.usb.action.USB_ACCESSORY_DETACHED
+android.hardware.usb.action.USB_DEVICE_ATTACHED
+android.hardware.usb.action.USB_DEVICE_DETACHED
+android.intent.action.BOOT_COMPLETED
+android.intent.action.DELETE
+android.intent.action.INSTALL_PACKAGE
+android.intent.action.MAIN
+android.intent.action.MEDIA_BAD_REMOVAL
+android.intent.action.MEDIA_CHECKING
+android.intent.action.MEDIA_EJECT
+android.intent.action.MEDIA_MOUNTED
+android.intent.action.MEDIA_REMOVED
+android.intent.action.MEDIA_UNMOUNTED
+android.intent.action.PHONE_STATE
+android.intent.action.SCREEN_OFF
+android.intent.action.SCREEN_ON
+android.intent.action.TIME_TICK
+android.intent.action.UNINSTALL_PACKAGE
+android.intent.action.USER_PRESENT
+android.intent.action.VIEW
+android.intent.action.car_system_gesture_mode
+android.intent.category.LAUNCHER
+android.intent.extra.INTENT
+android.intent.extra.STREAM
+android.media.metadata.ALBUM_ART
+android.media.metadata.ART
+android.media.metadata.DISPLAY_ICON
+android.media.metadata.DURATION
+android.net.wifi.SCAN_RESULTS
+android.net.wifi.STATE_CHANGE
+android.net.wifi.WIFI_STATE_CHANGED
+android.net.wifi.supplicant.STATE_CHANGE
+android.os.SystemProperties
+android.permission.
+android.permission.ACCESS_BACKGROUND_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_MOCK_LOCATION
+android.permission.BIND_ACCESSIBILITY_SERVICE
+android.permission.BIND_NOTIFICATION_LISTENER_SERVICE
+android.permission.BIND_VPN_SERVICE
+android.permission.BLUETOOTH_CONNECT
+android.permission.CHANGE_WIFI_STATE
+android.permission.READ_EXTERNAL_STORAGE
+android.permission.READ_LOGS
+android.permission.RECORD_AUDIO
+android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+android.permission.REQUEST_INSTALL_PACKAGES
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.WRITE_SECURE_SETTINGS
+android.settings.ACCESSIBILITY_SETTINGS
+android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS
+android.settings.APPLICATION_DETAILS_SETTINGS
+android.settings.APPLICATION_DEVELOPMENT_SETTINGS
+android.settings.HOME_SETTINGS
+android.settings.MANAGE_UNKNOWN_APP_SOURCES
+android.settings.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+android.settings.SETTINGS
+android.settings.USAGE_ACCESS_SETTINGS
+android.settings.WIFI_SETTINGS
+android.settings.action.MANAGE_OVERLAY_PERMISSION
+android.title
+android.view.ViewTreeObserver$InternalInsetsInfo
+android.view.ViewTreeObserver$OnComputeInternalInsetsListener
+android.widget.Button
+android.widget.RadioButton
+android:get_usage_stats
+android:id/button1
+android:id/button2
+android:mock_location
+androidApi
+android_id
+answerWindowMs
+apkUrl
+apk_
+apk_path
+app:
+appIcons
+app_language
+app_store
+append
+application
+application/json
+application/json; charset=utf-8
+application/json;charset=UTF-8
+application/vnd.android.package-archive
+appops
+appops set --user current 
+apps
+apps are hidden
+ar
+aradarOn
+area
+areaBoot
+arg_project_root
+arg_project_setting_def
+arg_project_setting_key
+attention_mask
+au
+aubcduwuguousrtbuhuy
+audio
+audioMs
+audioSource
+audio_read
+auhio
+auibcidiuwugiuouisirtbiuih
+auth
+auth failed
+auth_denied
+auth_ok
+author
+auto
+autoCollapse
+available
+availableActions
+available_values
+awaitingAnswer
+awaiting_pin
+aybcdywygyoysrtbyhyi
+b_fiksik_off
+b_fiksik_on
+backgroundTransparency
+bagraund_color_hiden
+battery
+batteryCurrentA
+batteryVoltage
+batteryVoltageV
+bd
+bearing
+before ACTION_DELETE: 
+before={
+binder frame=
+black
+black_top_install_win_click
+bluetooth adapter is not enabled
+bluetooth permission
+bluetooth_name
+bluetoothlescanner is null
+board
+boot
+broadcast:
+bufferBytes
+build_route_on_map
+buttonMode
+bytes
+bytes=
+cabinTemp
+cabin_temp
+call
+call_cancelled
+cam_speed_txt
+can
+cancel
+candidates
+candidatesPreparing
+cannot clear recovery state
+cannot save recovery state
+cannot save reset deadline
+car
+carResponse
+carState
+car_cmd_proxy_null
+car_package_toggle_dialog
+car_state
+car_system_gesture_mode_LounchB
+catalog
+catalog_exact
+catalog_json
+catalog_phrase
+catalog_prepare
+catalog_ready
+cccd descriptor not found
+cccd write status
+centeredHandle
+central
+challenge
+channel
+che
+chery-aiot-pid119
+chery-aiot-qrxn-pid137
+chery_aiot_uuid
+childTaskIds
+china cloud bind failed
+china-cloud
+city
+clarification
+clearDeviceOwner
+clearDeviceOwnerApp failed
+clearPackagePersistentPreferredActivities failed, admin=
+clearPackagePersistentPreferredActivities ok for 
+clearUserRestriction(DISALLOW_APPS_CONTROL) failed, admin=
+clearUserRestriction(DISALLOW_APPS_CONTROL) ok, admin=
+clearUserRestriction(DISALLOW_UNINSTALL_APPS) failed, admin=
+clearUserRestriction(DISALLOW_UNINSTALL_APPS) ok, admin=
+clickHeatButton: 
+climate
+climate_
+climate_ac_off
+climate_ac_on
+climate_air_
+climate_air_all
+climate_air_face
+climate_air_face_feet
+climate_air_face_glass
+climate_air_feet
+climate_air_feet_glass
+climate_air_glass
+climate_auto_off
+climate_auto_on
+climate_fan_
+climate_fan_0
+climate_fan_1
+climate_fan_10
+climate_fan_2
+climate_fan_3
+climate_fan_4
+climate_fan_5
+climate_fan_6
+climate_fan_7
+climate_fan_8
+climate_fan_9
+climate_front_defrost_off
+climate_front_defrost_on
+climate_get_state
+climate_power_off
+climate_power_on
+climate_set_
+climate_set_ac
+climate_set_air_mode
+climate_set_auto
+climate_set_fan_speed
+climate_set_front_defrost
+climate_set_front_glass_heat
+climate_set_power
+climate_set_rear_defrost
+climate_set_recirculation
+climate_set_seat_heat
+climate_set_seat_vent
+climate_set_steering_wheel_heat
+climate_set_sync
+climate_set_temperature
+climate_sync_off
+climate_sync_on
+close
+close_all_doors
+close_central_lock
+close_door_front_left
+close_door_front_right
+close_door_rear_left
+close_door_rear_right
+close_sunshade
+close_trunk
+close_window_front_left
+close_window_front_right
+close_window_rear_left
+close_window_rear_right
+close_windows
+closeverb
+cloud
+cluster
+cm
+cmd
+cmd deviceidle whitelist 
+collapsed
+collapsedSize
+collapsedSquare
+com.android.
+com.android.launcher3.permission.READ_SETTINGS
+com.android.launcher3.permission.WRITE_SETTINGS
+com.android.packageinstaller
+com.android.packageinstaller.PackageInstallerActivity
+com.android.permissioncontroller:id/tv_title
+com.android.settings
+com.android.settings.Settings$WifiSettings2Activity
+com.android.settings.Settings$WifiSettingsActivity
+com.android.settings.Settings$WirelessSettingsActivity
+com.android.settings.WirelessSettings
+com.android.settings.wifi.WifiSettings
+com.android.settings.wifi.WifiSettingsActivity
+com.astrob.turbodog
+com.autolink.mediadebug.app
+com.autolink.mediadebug.app:id/tv_minimize
+com.autolink.mediadebug.app_CLICK
+com.autonavi.amapauto
+com.desaysv
+com.desaysv.assistant 
+com.desaysv.engmode
+com.desaysv.engmode.ui.WifiActivity
+com.desaysv.voicezone
+com.desaysv.vrcontrolmgr
+com.desaysv.vrservice
+com.example.navistart
+com.example.navistart.AccessibilityRestartReceiver
+com.example.navistart.MockGPS.USB_PERMISSION
+com.example.navistart.action.USER_APPS_HIDE_OPEN
+com.example.navistart.carsC.cars.ProBroNULL
+com.example.navistart.carsC.cars.Semidrive.AreaDisplayJAECOOJ6
+com.example.navistart.carsC.cars.Semidrive.JAECOOJ6Proxy
+com.example.navistart.carsC.cars.autolink.AreaDisplayT1
+com.example.navistart.carsC.cars.autolink.SoueastS07Proxy
+com.example.navistart.carsC.cars.desaysv.AreaDisplay
+com.example.navistart.carsC.cars.desaysv.AreaDisplayAriTigo
+com.example.navistart.carsC.cars.desaysv.AreaDisplayESTEOET8
+com.example.navistart.carsC.cars.desaysv.AreaDisplayJetourT2
+com.example.navistart.carsC.cars.desaysv.AreaDisplayT8
+com.example.navistart.carsC.cars.desaysv.CarArriso8Proxy
+com.example.navistart.carsC.cars.desaysv.CarTiggoProxy
+com.example.navistart.carsC.cars.desaysv.CarTiggoProxyLite
+com.example.navistart.carsC.cars.desaysv.ESTEOET8Proxy
+com.example.navistart.carsC.cars.desaysv.ProBro
+com.example.navistart.carsC.cars.desaysv.ProBroJ7YAN
+com.example.navistart.carsC.cars.desaysv.ProBroJ8
+com.example.navistart.carsC.cars.desaysv.ProBroJT2
+com.example.navistart.carsC.cars.desaysv.ProBroT8
+com.example.navistart.carsC.cars.desaysv.ProInfoJ
+com.example.navistart.carsC.cars.desaysv.ProInfoJ7Urban
+com.example.navistart.carsC.cars.desaysv.ProInfoJYan
+com.example.navistart.carsC.cars.desaysv.ProInfoT2
+com.example.navistart.carsC.cars.desaysv.ProLan
+com.example.navistart.carsC.cars.desaysv.ProLanJT2
+com.example.navistart.carsC.cars.geely.AreaDisplayGeely
+com.example.navistart.carsC.cars.geely.AreaDisplayGeelyE8
+com.example.navistart.carsC.cars.geely.CarGeelyE8Proxy
+com.example.navistart.carsC.cars.geely.CarGeelyProxy
+com.example.navistart.carsC.cars.haval.AreaDisplayHaval
+com.example.navistart.carsC.cars.haval.HavalCanProxy
+com.example.navistart.carsC.cars.mega.AreaDisplayExlantixET
+com.example.navistart.carsC.cars.mega.ExlantixETProxy
+com.example.navistart.carsC.cars.mega.OMODAC7.OmodaC7Proxy
+com.example.navistart.carsC.cars.neusoft.AreaDisplayTXL
+com.example.navistart.carsC.cars.neusoft.AreaDisplayVX
+com.example.navistart.carsC.cars.neusoft.NeuCanProxyMX
+com.example.navistart.carsC.cars.neusoft.NeuCanProxyTXL
+com.example.navistart.carsC.cars.neusoft.NeuCanProxyVX
+com.example.navistart.carsC.cars.v23.ICarV23Proxy
+com.example.navistart.home.WebLauncherHome
+com.example.navistart.provider
+com.example.navistart.run.Spich.Focus
+com.example.navistart.transport.ACQUIRE
+com.example.navistart.transport.PUBLISH
+com.example.navistart/com.example.navistart.MyA11yService
+com.github.ihandy.jobschedulerdemo.action.ACTION_WRITE_EXERCISE
+com.google.android.packageinstaller
+com.iflytek.autofly.sceneengine
+com.iflytek.autofly.sceneengine.DATAUPLOAD
+com.iflytek.cutefly.speechclient.hmi
+com.ivolk.StrelkaGPS
+com.mega.appstore
+com.mega.appstore.ACTION_INSTALL_RESULT
+com.miui.packageinstaller
+com.wireguard.android
+combined
+command
+command_final
+command_prepared
+command_routed
+command_selected
+compared
+complete
+complete_phrase
+condition
+conf
+config
+configuration
+confirmed_contact
+conflicting
+conflicting_
+conflicting_operation
+conflicting_seat_modes
+conflicting_side
+conflicting_value
+connectgatt returned null
+connection status=
+connectivity
+content
+content://com.android.launcher3.settings/favorites
+content://com.mega.phev.voicelib
+context
+context_ra_boardferry
+context_ra_exit_left
+context_ra_exit_right
+context_ra_finish
+context_ra_forward
+context_ra_hard_turn_left
+context_ra_hard_turn_right
+context_ra_in_circular_movement
+context_ra_out_circular_movement
+context_ra_take_left
+context_ra_take_right
+context_ra_turn_back_left
+context_ra_turn_back_right
+context_ra_turn_left
+context_ra_turn_right
+could
+cpuMs
+crash_log.txt
+createMeeting
+curated_phrase
+current
+current user unavailable
+current=$(settings get global policy_control) && [ "$current" = 
+custom
+cx
+cy
+d
+dClock
+dark
+data
+data:image/jpeg;base64,
+date
+day
+dd:MM:yy
+debounceMs
+decision
+decodeMs
+decrease
+decreaseverb
+default
+default_hud
+default_hud.zip
+default_hud/index.html
+default_web_black
+default_web_black.zip
+default_web_launcher
+deferred_or_multiple_commands
+delayed refresh after 
+delivery
+density      = 
+densityDpi   = 
+desay.broadcast.map.meter.interaction
+desaysv
+description
+designs
+destination
+device
+device_policy
+dfHHUDUWIDJNMBCBU&&*#*(#HIODHIGUYGU^R%%E^DRFYVHBJKJHLIUPO&*Y^&%R%FDTGFCY
+diagnostic
+dialog
+dialog_log_keycode_discovery
+dialogueText
+dis
+disable
+disable_qnx_vignette
+discoverservices status=
+dismiss
+display
+displayId
+displayName
+disposed
+distance
+distance_txt
+distanceleft
+do not
+domain
+don['’]t
+done
+door
+down
+drive_mode
+drive_mode_eco
+drive_mode_normal
+drive_mode_selection
+drive_mode_sport
+driver
+driverSeatHeat
+driverSeatVent
+driverTemp
+driverTemperature
+driver_temp
+dt
+due
+dumpsys deviceidle whitelist 
+durationMs
+e
+echo JCT_READY
+eight
+eighteen
+eighty
+elapsedMs
+electricRangeKm
+elements
+eleven
+em
+embedded
+empty_catalog
+empty_name
+emulated
+en
+enable
+enable_qnx_vignette
+enabled
+enabled_
+enabled_accessibility_services
+enabled_notification_listeners
+encoded frame=
+energy_management
+engine
+engineRpm
+engineState
+enum:
+enum:MEDIA_PLAY_PAUSE
+enum:Not_value
+enum:RECENT_TASK_MANAGER
+enum:RUN_START_APP_MENU
+enum:SPLIT_RUN
+equals
+error
+es
+estimatedFuelL100Km
+event
+eventTime=
+event_subscribe
+event_unsubscribe
+evidence
+exercise.txt
+exit=
+exit=0
+exlantix_drive_mode_selection
+exlantix_manual_engine
+exlantix_manual_steering
+exlantix_manual_suspension_damping
+exlantix_physical_button
+exlantix_physical_button_address
+exlantix_physical_button_commands
+exlantix_physical_button_salt
+exlantix_physical_knob_left
+exlantix_physical_knob_right
+exlantix_qrxn_button_address
+exlantix_qrxn_button_commands
+expandable
+expandedSize
+expire_date
+expired
+expiresAt
+explicit_address
+extra_permissions
+f
+face
+face_feet
+face_glass
+false
+fan
+fanSpeed
+fan_zone_not_supported
+feet
+feet_glass
+fifteen
+fifth
+fifty
+file
+file://
+file_extension
+file_extension_mode_send
+final
+first
+five
+fixed
+fl
+flags        = 0x
+floating_tray_always_visible
+floating_tray_auto_collapse
+floating_tray_orientation
+floating_tray_shape
+fl|fr|rl|rr|all
+focus_release
+focus_released
+focus_request
+fold_mirrors
+forceScan
+forty
+four
+fourteen
+fourth
+fr
+fragment_RUN_TYPE
+fragment_args
+fragment_class
+front
+frontDefrost
+frontGlassHeat
+frontLeft
+frontRight
+frontSeats
+front_defrost
+front_glass_heat
+front_seats
+fsLabel
+fsUuid
+fuel
+fuelLitres
+fuelPercent
+fuelRangeKm
+fuel_percent
+fuel_widget_tank_capacity_litres
+full
+fullGrammar
+fullMode
+fullscreen_apps
+fullscreen_apps_dialog
+fully
+generation
+gesture
+gesture_zones
+get
+getActiveAdmins
+getActiveAdmins failed before policy cleanup
+getActiveAdmins failed before remove
+getAllRootTaskInfos
+getAllStackInfos
+getConnectionState
+getDescription
+getDeviceList failed
+getDisplayInfo
+getFsLabel
+getFsUuid
+getFuelPercent
+getId
+getInstance
+getInternalPath
+getParkOnOff
+getPath
+getPathFile
+getRPM
+getService
+getSpeed
+getState
+getStorageVolumes failed
+getType
+getUuid
+getVolumeList
+getVolumes
+get_exlantix_telemetry
+get_fuel_percent
+get_list
+getlobheat
+getouttemp
+getprop
+getrulheat
+getstatengin
+getsun
+getvod
+getzadheat
+glass
+glovebox
+gps
+gps-source
+gps.demand
+gps.location
+gps_server_ios
+grant_permissions_dialog
+h
+handleX
+handleY
+hard
+hardVeto
+has not key: AmapAutoDRPos
+hasReply
+hashCode
+heading
+heat
+heat_(wheel|windshield|rearwindow)_(on|off)
+heat_rearwindow_off
+heat_rearwindow_on
+heat_seat_l_0
+heat_seat_l_1
+heat_seat_l_2
+heat_seat_l_3
+heat_seat_r_0
+heat_seat_r_1
+heat_seat_r_2
+heat_seat_r_3
+heat_wheel_off
+heat_wheel_on
+heat_windshield_off
+heat_windshield_on
+heat_zad_seat_l_0
+heat_zad_seat_l_1
+heat_zad_seat_l_2
+heat_zad_seat_l_3
+heat_zad_seat_r_1
+heat_zad_seat_r_2
+heat_zad_seat_r_3
+heat_zad_seat_r_off
+heating
+heats
+hello
+hide_advanced_actions
+host
+hour
+hsh
+htmlFragment
+http
+http://schemas.android.com/apk/res-auto
+http=
+https
+https://
+https://api.open-meteo.com/v1/forecast
+https://dwn.jcartools.ru/Vosk/
+https://dwn.jcartools.ru/Vosk/multilingual-e5-small-int8.zip
+https://dwn.jcartools.ru/arad/Base.zip
+https://dwn.jcartools.ru/arad/h_am.zip
+https://dwn.jcartools.ru/arad/h_az.zip
+https://dwn.jcartools.ru/arad/h_by.zip
+https://dwn.jcartools.ru/arad/h_de.zip
+https://dwn.jcartools.ru/arad/h_es.zip
+https://dwn.jcartools.ru/arad/h_ge.zip
+https://dwn.jcartools.ru/arad/h_kz.zip
+https://dwn.jcartools.ru/arad/h_rs.zip
+https://dwn.jcartools.ru/arad/h_ru.zip
+https://dwn.jcartools.ru/arad/h_tr.zip
+https://dwn.jcartools.ru/arad/h_ua.zip
+https://dwn.jcartools.ru/arad/h_uz.zip
+https://jcartools.ru
+https://jcartools.ru/gps/map.html
+https://jcartools.ru/otp/upload_log.php
+https://jcartools.ru/otp/vpn.php
+https://jcartools.ru/otp/vpn_time.php
+https://jcartools.ru/pay/?email=
+https://raw.githubusercontent.com/JCarTools/core_manifest/refs/heads/master/manifest.json
+https://yandex.ru/pogoda/?lat=%.2f&lon=%.2f
+hud
+hudSenderType
+hud_widget_name
+hudspeed_package
+hundred
+icon
+id
+id           = 
+id -u
+image
+img
+immersive.full
+immersive.full=
+immersive.navigation
+immersive.navigation=
+immersive.status
+immersive.status=
+incoming_apks
+incoming_number
+increase
+increaseverb
+independent
+index.html
+inf
+initCarManager
+initial
+injectInputEvent
+input_ids
+insufficient_operation_alternatives
+intent
+intent_analysis
+intents
+internalPath
+invalid bluetooth address
+invalid recovery component
+invalid_request
+isAdminActive
+isConnected
+isDeviceOwnerApp
+isMountedReadable
+isRemovable
+isWifiApEnabled
+isWifiApEnabled unavailable: 
+it
+items
+j6_climate_ac_off
+j6_climate_ac_on
+j6_climate_air_all
+j6_climate_air_face
+j6_climate_air_face_feet
+j6_climate_air_face_glass
+j6_climate_air_feet
+j6_climate_air_feet_glass
+j6_climate_air_glass
+j6_climate_auto_off
+j6_climate_auto_on
+j6_climate_fan_1
+j6_climate_fan_10
+j6_climate_fan_2
+j6_climate_fan_3
+j6_climate_fan_4
+j6_climate_fan_5
+j6_climate_fan_6
+j6_climate_fan_7
+j6_climate_fan_8
+j6_climate_fan_9
+j6_climate_front_defrost_off
+j6_climate_front_defrost_on
+j6_climate_power_off
+j6_climate_power_on
+j6_climate_set_ac
+j6_climate_set_air_mode
+j6_climate_set_auto
+j6_climate_set_fan_speed
+j6_climate_set_front_defrost
+j6_climate_set_power
+j6_climate_set_sync
+j6_climate_sync_off
+j6_climate_sync_on
+j6_window_(driver|passenger|rear_left|rear_right)_(open|close|vent)
+j6_window_driver_close
+j6_window_driver_open
+j6_window_driver_vent
+j6_window_passenger_close
+j6_window_passenger_open
+j6_window_passenger_vent
+j6_window_rear_left_close
+j6_window_rear_left_open
+j6_window_rear_left_vent
+j6_window_rear_right_close
+j6_window_rear_right_open
+j6_window_rear_right_vent
+j6_windows_(open|close|vent)_all
+j6_windows_close_all
+j6_windows_open_all
+j6_windows_vent_all
+jaecoo_battery_protection_mode
+jaecoo_energy_recycle_level
+jaecoo_power_mode
+java.
+jct_transport
+jct_web_launcher
+jna.boot.library.path
+jna.nosys
+jnidispatch
+joinMeeting
+jq.MiniMapFrameService
+json parse failed
+k
+key
+kind
+km
+km/h
+km/h - 
+l
+label
+language:
+lastFinal
+lastObserved
+last_event_get
+last_uptime
+lat
+lat_
+latest
+latitude
+launch
+launcher
+launcherCatalog
+launcher_dock_action_
+launcher_dock_action_0
+launcher_dock_action_1
+launcher_dock_action_2
+launcher_icon_reset
+launcher_native_desktop_layout_v1
+launcher_native_wallpaper_mode_v1
+launcher_ready
+launcher_shortcut_enabled_
+launcher_shortcuts_dialog
+launcher_window_bridge
+launcher_windows
+layout_inflater
+left
+leftRawValues
+leftValue
+light
+lim_visible
+lobHeat
+location
+location_unavailable
+log
+log_keycode_actions
+lon
+lon_
+longitude
+lowVoltageV
+low_score
+lower
+m
+main
+mainEntity
+manifest_install_target
+manifest_type_filter
+manifest_types_filter
+manual
+manual_conflict
+manual_contains
+manual_exact
+map_area
+map_search
+map_status
+margin
+marginThreshold
+matchFull
+matchingMs
+maxCn0
+maxCn0DbHz
+meanCn0
+meanCn0DbHz
+media_session
+mega
+message
+messageData
+messages
+messages.received
+messages.remove
+messages.reply
+messages.reply.result
+messages.upsert
+minute
+minutes
+missing decoded auth data
+missing_operation
+mkv|avi|mov|mp4|m4v|webm|flv|wmv|mpg|mpeg|ts|mts|m2ts|vob|3gp|ogv
+mock_gps_auto_fallback
+mock_gps_host
+mock_gps_port
+mock_gps_source
+mock_gps_source_type
+mock_gps_test
+mode = 
+model
+model_init
+model_ready
+modem
+modern_edge_gesture_zones
+modern_section
+modern_tool
+month
+mount-scan
+mounted
+mounted_ro
+mounted_roots
+mounted_usb_devices
+multi_Button_view
+multi_Button_view_pass
+multi_Button_view_zad
+multi_action_
+multi_use_eight_buttons
+multilingual-e5-small-int8
+multilingual-e5-small-int8.download
+multilingual-e5-small-int8.new
+multilingual-e5-small-int8.old
+multilingual-e5-small-int8.onnx
+multiple_commands
+multiple_objects
+multiple_values
+municipality
+mur
+musicInfo
+mute
+my_dialog
+name
+name         = 
+native
+nativeFuelL100Km
+native_launcher_wallpaper.jpg
+native_launcher_wallpaper.jpg.custom
+native_launcher_wallpaper.jpg.download
+native_launcher_wallpaper.jpg.previous
+native_menu_action_defaults_created
+native_menu_auto_hide
+native_menu_edge
+native_menu_edge_position
+native_menu_recent_apps_tray
+native_menu_recent_splits_tray
+naviOn
+navigation
+navigation.open
+navigation.result
+navigation_address
+navigation_received_v1
+navigation_result
+negation_or_cancel
+negative_value
+network
+networkInfo
+neusoft
+neusoft_vx
+newAppLogger
+newCarRunAppProxy
+newHUDManager
+newMusicInfoProxy
+newPermManager
+newSettingsdProxy
+newState
+newver
+next
+nextRoad
+nextRoadName
+nextcameradistance
+nichego
+night
+nine
+nineteen
+ninety
+nmea_modem
+nmea_usb
+no_auto_heat_to_auto_start_engine
+no_compatible_candidate
+no_compatible_candidate: 
+no_control_apps
+no_operation_alternative
+no_uninstall_apps
+nonce
+none
+normalized
+not_available
+not_checked
+notification
+notification_widget_location
+notification_widget_temperature
+null
+observedAtMs
+off
+offAction
+offverb
+ok
+omoda_steering_media_control_disabled
+on
+onComputeInternalInsets
+onCreate
+onGesture - 
+onInterrupt
+onReceive
+onReceive_ACTION_SCREEN_OFF
+onReceive_ACTION_SCREEN_ON
+onReceive_ACTION_USER_PRESENT 
+onUnbind
+one
+online
+onverb
+open
+open mode requested success=
+open_central_lock
+open_door_front_left
+open_door_front_right
+open_door_rear_left
+open_door_rear_right
+open_energy_management
+open_exlantix_telemetry
+open_fuel_tank
+open_glove_box
+open_j6_climate
+open_j_climate
+open_launcher_settings
+open_sunshade
+open_trunk
+open_txl_climate
+open_vx_climate
+open_window_front_left_10
+open_window_front_left_20
+open_window_front_left_80
+open_window_front_left_full
+open_window_front_right_10
+open_window_front_right_20
+open_window_front_right_80
+open_window_front_right_full
+open_window_rear_left_10
+open_window_rear_left_20
+open_window_rear_left_80
+open_window_rear_left_full
+open_window_rear_right_10
+open_window_rear_right_20
+open_window_rear_right_80
+open_window_rear_right_full
+open_windows_
+open_windows_10
+open_windows_20
+open_windows_25
+open_windows_50
+open_windows_75
+open_windows_80
+open_windows_full
+openverb
+operation
+org.videolan.vlc
+orient
+origin
+original_absent
+original_policy
+original_saved
+other_domain
+outTemp
+out_temp
+overlay attached attempt=
+overlay not attached
+overlay unavailable: 
+owner=
+ownerPackageName
+package
+package:
+packageName
+packageName2
+pair timeout
+pair_start
+pair_status
+pair_stop
+paired_get
+pairing_offer
+pairing_request
+pairing_token
+parameters
+park
+parkOnOff
+parking_sensors_on
+partial
+partialopenverb
+passage: 
+passenger
+passengerSeatHeat
+passengerSeatVent
+passengerTemp
+passengerTemperature
+passenger_temp
+path
+pattern
+payload
+pdn
+pending
+percent
+percentunit
+permission
+permission_denied
+permissioncontroller
+persist.sys.vehicle.vin
+phone
+phone_app
+phone_call
+phone_problem
+phone_result
+phone_state
+phrase
+phrases
+physical_button_paired_get
+physical_button_selected_type
+pi
+ping
+pkg
+pl
+please
+pm grant --user current 
+pm grant com.example.navistart android.permission.WRITE_SECURE_SETTINGS
+pong
+port
+power
+powerKw
+prebufferMs
+prebuffer_replay
+preparing
+preview
+previous
+profile
+profile:
+profileId = ? AND itemType = 0
+projects
+prompt
+proof
+protocol
+provider
+punto
+pv
+qnx_vignette_boolean
+qrxn
+query
+query returned null
+query: 
+question_or_condition
+queueDepth
+r
+radar
+raise
+ratio
+raw
+rawValues
+readBytes
+realDensityDpi = 
+realSize(px)= 
+rear
+rear window
+rearDefrost
+rearHeat
+rearLeft
+rearRight
+rearSeats
+rear_defrost
+rear_left
+rear_seats
+reason
+recirculation
+recognition
+recognition_json
+recorderAlive
+recording_init
+recording_restart
+recording_started
+recording_stopped
+recoveryRequest
+rejection
+relative_fan_level_not_supported
+relative_or_negative_value
+relative_seat_level_not_supported
+relative_temperature_amount_not_supported
+reliable
+remainDist
+remote_gps
+removeActiveAdmin failed
+removeActiveAdmin failed: 
+removeActiveAdmin fallback failed
+removeActiveAdmin fallback ok: 
+removeActiveAdmin ok: 
+removeOnComputeInternalInsetsListener
+removeTask
+replacement
+requestId
+requestType
+res
+reset already pending
+resourceId
+response
+restarted
+result
+result=
+retry 
+rightRawValues
+rightValue
+rl
+role
+roll|wind|bring|crank|turn
+roll|wind|shut|activate|deactivate|boost|reduce|raise|lower|power|crank|switch|turn|bring
+root
+rotation     = 
+route
+route_sent
+rpm
+rr
+rsa
+rtt
+ru
+ru-RU,ru;q=0.9
+ru.yandex.weatherplugin
+ru.yandex.yandexmaps
+ru.yandex.yandexmaps.MINIMAP_PING
+ru.yandex.yandexmaps.MINIMAP_READY
+ru.yandex.yandexmaps.minimap.IMiniMapFrames
+ru.yandex.yandexnavi
+rulHeat
+rules
+run
+runApp
+runEnum
+runOnReceive - WifiEnable
+runSavedSplit
+run_app_more_settings
+run_app_more_settings_DELAY
+runnerUpKey
+runnerUpPhrase
+runnerUpScore
+runtime permissions
+salt
+sampleRate
+satellites
+satellitesUsedInFix
+satellitesVisible
+scaleX
+scaleY
+scan failed
+scan timeout
+schema
+schemaVersion
+score
+scoreThreshold
+screens
+scrollToBottomTest
+search
+search_sent
+seat
+seats
+second
+seconds
+section
+seekBar_antiradar_volum_KEY
+segment
+selectedKey
+selected_file
+self
+semantic
+semantic-candidates-5.cache
+semantic-candidates.cache
+semanticReady
+semanticRunning
+semantic_end
+semantic_fallback
+semantic_precheck
+semantic_rank
+semantic_scheduled
+semantic_skipped
+semantic_start
+sendProfile
+sender
+sent
+sequence
+service
+service event: type=
+session
+session_end
+session_start
+set
+setDisplayId
+setLaunchWindowingMode
+setProfile('
+setSplitScreenCreateMode
+setTouchableInsets
+setUninstallBlocked(false) failed, admin=
+setUninstallBlocked(false) ok for 
+set_drive_mode
+set_manual_config
+set_power_mode
+set_window_position
+seteditTextMessadge
+settings
+settings get global policy_control
+settings.html
+set|up|down|on|off|toggle|open|close|next|previous
+seven
+seventeen
+seventy
+seventy five
+sh
+shell:
+short_query
+show requested active=
+showAvatar
+showVisibleForHiddenMode hidden=
+six
+sixteen
+sixty
+size
+size (dp)    = 
+slots
+snap
+socPercent
+software_window
+source
+sourceSession
+spatialCoverage
+specify_
+specify_airflow_direction
+specify_fan_level
+specify_level
+specify_object
+specify_seat_heating_or_ventilation
+specify_temperature
+specify_track_direction
+specify_window_group
+speed
+speedLimit
+speed_limit_alarm_off
+speedlimit
+spi_aktivate_sw_SW
+spi_all_off_poln
+spinner_aradar_pro
+spinner_pogoda_widg_pro
+split:
+splits
+square
+stage
+stale
+stale_or_inactive
+start
+startNavigation
+startScan failed while nudging Wi-Fi connection: 
+startUpdate
+startVosk
+start_Install_JCTProxy
+start_navigation
+state
+state        = 
+status
+steering
+steeringHeat
+steeringWheelHeat
+steering_wheel_heat
+stopTethering
+stopVosk
+storage
+storage broadcast: 
+storage_error
+store
+store_app
+str_top_maneuver
+strelka
+strelka_all
+success
+sun
+super_switch_
+super_widgets_designs_v1
+super_widgets_enabled
+supplicantError
+suspension_damping
+sw_AppPPFullscreen
+sw_CustomPPFullscreen
+sw_CustomPPStart
+sw_auto_start_black
+sw_auto_start_web_launcher
+sw_bezopasnost
+sw_fiksik_on_off
+sw_multi_button
+sw_pogoda_widg_onoff
+sw_run_app_more
+sw_speed_limit_alarm_off
+sw_start_custom_proekciya_hud
+sw_start_pro_gu
+sw_start_stop_off
+sw_stolk
+switch:
+switch:recirculation
+switch_parameter_not_supported
+swlan
+sync
+sys.vehicle.hardware.serial.number
+sys.vehicle.hardware.vin.code
+system
+tag
+target
+taskAlive
+taskIds
+tekvod_save
+temp
+temperature
+temperature_2m
+ten
+test/app-release
+text
+theme
+third
+thirteen
+thirty
+three
+timdeley
+time
+timeout
+timestamp
+title
+to
+toString
+toggle
+toggleSecond
+toggle_qnx_vignette
+token
+token_type_ids
+tokenizer.json
+topActivity
+touchableRegion
+town
+tr
+track
+traffic_data.db
+transcript
+transparency
+transport.presence.gps
+transport.presence.messages
+transport_settings
+tripElectricKm
+tripFuelKm
+tripKm
+true
+truncated
+trunk
+turnDist
+turnType
+turn|bring|adjust|make
+twelve
+twenty
+twenty eight
+twenty five
+twenty four
+twenty six
+twenty two
+two
+txl_
+type
+typed_recovery
+types
+uimode
+unauthorized
+unavailable
+unavailable:
+unfold_mirrors
+uninstall
+unit
+unknown
+unknown error
+unknown_climate_target
+unknown_command
+unknown_data
+unsafe_
+unsafe_media_parameter
+unsafe_missing_temperature_operation
+unsafe_missing_value
+unsafe_mute_scope
+unsafe_object_parameter
+unsafe_report
+unsafe_report_or_quote
+unsafe_seat_unit
+unsafe_unit_or_value
+unsafe_unknown_window_amount
+unsupported_group
+unsupported_temperature_operation
+unsupported_window_operation
+until
+up
+update
+updateNS.apk
+updateSignalQuality
+usagestats
+usb
+usb broadcast: 
+usb mass storage: 
+usb://
+user
+user_apps_hide_dialog
+user_apps_hide_enabled
+user_apps_hide_launchers
+user_apps_hide_packages
+user_apps_hide_zone_transparent
+user_apps_hide_zone_x
+user_apps_hide_zone_y
+user_binding
+uuid/token
+v
+v1:
+value
+values
+ve
+vehicle
+vehicleState
+vehicle_state
+vent
+vent_seat_l_0
+vent_seat_l_1
+vent_seat_l_2
+vent_seat_l_3
+vent_seat_r_0
+vent_seat_r_1
+vent_seat_r_2
+vent_seat_r_3
+vent_zad_seat_l_0
+vent_zad_seat_l_1
+vent_zad_seat_l_2
+vent_zad_seat_l_3
+vent_zad_seat_r_1
+vent_zad_seat_r_2
+vent_zad_seat_r_3
+vent_zad_seat_r_off
+version
+via
+via без destination
+via_
+video
+video/
+video/*
+view_avatar
+village
+vm
+vocab
+vod
+voditel_seat_1
+voditel_seat_2
+voditel_seat_3
+voditel_set
+voice_action_aliases.json
+voice_activation_phrase
+voice_command_language.json
+voice_commands
+voice_engine_kind
+volume
+vosk
+vosk-model-ar-mgb2-0.4.zip
+vosk-model-gu-0.42.zip
+vosk-model-small-ca-0.4.zip
+vosk-model-small-cn-0.22.zip
+vosk-model-small-cs-0.4-rhasspy.zip
+vosk-model-small-de-0.15.zip
+vosk-model-small-en-us-0.15.zip
+vosk-model-small-eo-0.42.zip
+vosk-model-small-es-0.42.zip
+vosk-model-small-fa-0.5.zip
+vosk-model-small-fr-0.22.zip
+vosk-model-small-hi-0.22.zip
+vosk-model-small-it-0.22.zip
+vosk-model-small-ja-0.22.zip
+vosk-model-small-ko-0.22.zip
+vosk-model-small-kz-0.42.zip
+vosk-model-small-nl-0.22.zip
+vosk-model-small-pl-0.22.zip
+vosk-model-small-pt-0.3.zip
+vosk-model-small-ru
+vosk-model-small-ru.new
+vosk-model-small-ru.old
+vosk-model-small-ru.zip
+vosk-model-small-tr-0.3.zip
+vosk-model-small-vn-0.4.zip
+vosk-model-tl-ph-generic-0.6.zip
+vosk-model-uz-0.22.zip
+vosk-model.download
+vosk_language_model
+vpn_boot_start
+vpn_boot_start_status
+vpn_services_start
+vx_
+vx_seat_([12])_(heat|vent)_([0-3])
+vx_temperature_([12])_(\d+)_(\d+)
+vx_window_([0-3])_(0|25|50|75|100)
+w
+wake
+waze
+weather
+weatherView
+weather_code
+web callback frame=
+web_widget_selected
+wgpreconf
+wheel
+widgetState
+widget_root_dir
+widget_state
+widgets
+widgets_over_system
+wifi
+wifiStateReceiver already unregistered
+wifi_automatic
+wifi_state
+window
+window.JctInsets&&window.JctInsets(
+window.onAndroidEvent && window.onAndroidEvent('miniMapFrame', 
+window_set_position
+windowing
+windows-1251
+window|door|trunk|glovebox|temperature|heat|vent|fan|volume|mute|track|settings|air:[a-z_]+|switch:[a-z_]+
+window|heat|vent|fan|temperature
+windshield
+windshieldHeat
+wl
+wlan
+would
+write cccd
+write characteristic
+write status
+x
+xdpi / ydpi  = 
+y
+yandex_address_search
+yandexnavi
+year
+you
+zadHeat
+zadSeats
+zad_seats
+zero
+zip
+zone
+zone click count=
+{ "mode": "
+{"error":"
+{"error":"app_not_found"}
+{"error":"invalid_split"}
+{"error":"json_error"}
+{"error":"license_required"}
+{"error":"not_found"}
+{"error":"split_not_found"}
+{"error":"unauthorized"}
+{"error":"unknown_enum"}
+{"error":"unknown_profile_action"}
+{"hudSenderType":"
+{"lat":
+{"mode":"
+{"name":"
+{"ok":true}
+{"status":"ok"}
+{"status":"requested"}
+{"status":"subscribed"}
+{"status":"todo"}
+{"status":"unsubscribed"}
+{package=
+{}
+|
+|seats? (?:fans?|blower|airflow|air flow)|(?:fans?|blower|airflow|air flow)(?: (?:of|in|the|driver|passenger|front|rear|left|right|s)){0,7} seats?
+}
+}, clearOwnerAttempted=
+°
+°C
+°C, 
+»?
+А
+Автовыравнивание
+Автовыравнивание формирует ровные ряды в выбранном виде. В свёрнутом виде оставляет кнопку «+» по центру, если она включена. Результат можно поправить вручную.
+Автоматически сворачивать
+Автоматически скрывать панель
+Автомобиль подключён
+Автосворачивание плавающего лотка
+Адрес не должен быть пустым
+Аудиофокус восстановлен
+БЫСТРЫЕ ДЕЙСТВИЯ
+БЫСТРЫЕ РЕЖИМЫ
+БЫСТРЫЙ ДОСТУП
+Батарея: 
+Без кнопки «+»
+Быстрое действие
+В
+В архиве не найдена модель Vosk
+В архиве не найдены ONNX-модель и tokenizer.json
+В каталоге нажмите «Установить» — загруженная тема станет активной автоматически.
+ВЕС.КОНТ.
+ВОДИТЕЛЬ
+Ваши действия — на нужном экране
+Введите адрес ADB
+Введите команду
+Веб-движок остановлен. Нативный экран продолжает работать.
+Вентилятор климата: 1
+Вентилятор климата: 10
+Вентилятор климата: 2
+Вентилятор климата: 3
+Вентилятор климата: 4
+Вентилятор климата: 5
+Вентилятор климата: 6
+Вентилятор климата: 7
+Вентилятор климата: 8
+Вентилятор климата: 9
+Вентиляция
+Вентиляция · водитель
+Вентиляция · пассажир
+Вентиляция водителя
+Вентиляция пассажира
+Версия навигации не поддерживается
+Вертикально
+Виден в раскрытом и свёрнутом виде
+Виден только в раскрытом виде
+Виджет 
+Виджет включён
+Виджет сохранён
+Виджет установлен
+Включите режим сопряжения на кнопках.
+Включить
+Включить 
+Включить A/C
+Включить AUTO климата
+Включить MAX-обдув лобового
+Включить SYNC климата
+Включить климат
+Включить → 
+Внимание!
+Водитель
+Возобновляем воспроизведение...
+Временная потеря аудиофокуса, ставим на паузу
+Встроенная тема
+Всё вместе
+Выберите виджет: его можно переместить, уменьшить или увеличить.
+Выберите готовый виджет или создайте кнопку быстрого запуска
+Выберите действие для первого нажатия
+Выберите приложение для запуска в окне
+Выберите профиль Exlantix ET
+Выберите установленную тему или добавьте новую из каталога. Изменение применяется сразу.
+Выберите функции для шести кнопок на панели.
+Выбрана вкладка: 
+Выбрана тема 
+Выбранная веб-тема недоступна. Открыт надежный нативный экран.
+Выбрать кнопку
+Выбрать приложение
+Выбрать тему 
+Выбрать фон нативного экрана
+Выкл
+Выключено — длинная горизонтальная панель
+Выключено — прямоугольная область. Форма и расположение свёрнутого вида настраиваются отдельно от раскрытого, в том числе без кнопки «+».
+Выключить 
+Выключить A/C
+Выключить AUTO климата
+Выключить MAX-обдув лобового
+Выключить SYNC климата
+Выключить климат
+ГОТОВЫЕ ВИДЖЕТЫ
+ГУ — основной планшет
+Горизонтально
+Город: 
+ДОБАВИТЬ ТЕМУ
+Данные успешно сохранены в базу данных.
+Действие
+Действие при включении
+Действие при выключении
+Действие сейчас недоступно
+Действия и приложения
+Дизайн виджета
+Для расчета направления требуется как минимум две точки.
+Добавить на экран
+Долгота должна быть от -180 до 180
+Донат:
+Ждем ответ кнопок.
+ЗАСАДА
+Завершаем привязку.
+Загружаю действия…
+Загружаю новый фон…
+Загружаю приложения…
+Загружено 
+Загрузить следующую картинку
+Загрузка приложений…
+Заднее стекло
+Закрыть
+Закрыть 
+Закрыть все окна
+Закрыть заднее левое окно
+Закрыть заднее правое окно
+Закрыть климат-контроль
+Закрыть окно водителя
+Закрыть окно пассажира
+Закрыть шторку
+Запустите приложения из меню запуска
+Запустите проигрыватель
+Запустить JCarTools
+Заряд
+Здесь настраиваются подписи, действия и видимость каждой кнопки. Эти же настройки открываются нажатием в макете.
+Идет обновление базы...
+Идет сопряжение
+Изменения применяются кнопкой «Сохранить». Чтобы переместить весь виджет, удерживайте любой элемент, заголовок или кнопку раскрытия, затем перетащите.
+Изменить ширину и высоту окна
+Используется сейчас
+Истекло время ожидания ADB. Проверьте адрес и подтверждение RSA-ключа.
+История мощности батареи
+Ищем кнопки рядом с телефоном.
+КАМЕРА
+КЛИМАТ СИДЕНИЙ
+КОМФОРТ
+КОНЕЦ Н.П.
+КОНТРОЛЬ
+Какая погода в 
+Камера
+Каталог оформления
+Каталог тем лаунчера
+Квадрат
+Квадрат в свёрнутом виде
+Квадрат при раскрытии
+Квадратный
+Климат контроль
+Климат-контроль недоступен для выбранного профиля
+Кнопка
+Кнопка действия
+Кнопка не найдена. Включите режим сопряжения на кнопках и держите их рядом.
+Кнопки готовы к работе.
+Кнопки не сопряжены
+Кнопки ответили, но профиль не получил данные авторизации для завершения привязки.
+Кнопки подключены
+Кнопки подключились, но нужный BLE-профиль не найден: 
+Кнопки сопряжены
+Кнопки, переключатели и три уровня сидений. Отдельное расположение для раскрытого и свёрнутого вида.
+Комбинация разделения экрана
+Конструктор виджетов
+Копия
+Крупное время и текущая дата
+Линейный
+Лицензия не активна или срок её действия истёк
+Лицо
+Лицо + ноги
+Лицо + стекло
+Лоток недавних приложений
+Лоток недавних разделений
+МУЛЯЖ
+Мой виджет
+Мощность · кВт
+Мощность батареи
+Музыка
+Музыка не играет
+НАС.ПУНКТ
+НАСТРОЙКА JCT HOME
+НЕРОВН.
+На кнопке отображается только крупный значок выбранного действия, без текста.
+Навигатор
+Нагрев
+Нажатие на карточку → выключено → 1 → 2 → 3 → выключено
+Нажатие → 
+Нажимайте на всю карточку: выключено → 1 → 2 → 3 → выключено. Индикаторы показывают текущий уровень. При включении обогрева вентиляция этого сиденья выключается, и наоборот.
+Нажмите «Сопрячь кнопки» и включите режим сопряжения на кнопках.
+Нажмите кнопку на панели
+Нажмите кнопку...
+Нажмите на элемент — кнопка сразу появится на рабочем столе
+Нажмите на элемент, чтобы настроить его действие. Перетащите, чтобы изменить расположение. В свёрнутом виде можно двигать кнопку раскрытия.
+Нажмите нужную кнопку на панели
+Нажмите, чтобы применить
+Название
+Название в списке настроек
+Название виджета
+Направить обдув на 
+Направление
+Направление линейного лотка
+Например: Навигация
+Наружняя темепература: 
+Настроить
+Настроить нативный экран
+Настроить элемент
+Настройки виджета
+Настройки лаунчера
+Настройте поведение, расположение и быстрые действия панели.
+Не удалось активировать модель
+Не удалось активировать новую модель
+Не удалось выполнить команду. Профиль не передал причину.
+Не удалось запустить помощник окон
+Не удалось изменить уровень сиденья
+Не удалось открыть веб-тему. Нативный экран продолжает работать.
+Не удалось открыть выбранную картинку
+Не удалось открыть настройки WiFi
+Не удалось открыть приложение\n
+Не удалось отправить команду кнопкам по BLE: 
+Не удалось очистить временный архив
+Не удалось подготовить замену модели
+Не удалось подготовить замену текущей модели
+Не удалось подключиться к кнопкам по BLE: 
+Не удалось подключиться к сервису окон
+Не удалось прочитать ADB-ключ
+Не удалось создать папку 
+Не удалось создать папку модели
+Не удалось создать хранилище ADB-ключа
+Не удалось сопрячь кнопки. Причина не передана профилем.
+Не удалось сопрячь кнопки: 
+Не удалось сохранить новый фон
+Не удалось удалить 
+Не удалось удалить сеть 
+Не удалось удалить файл: 
+Не хватает данных Chery AIoT: uuid/token. Откройте Chery AIoT и повторите вход.
+Недавние
+Недопустимый путь в архиве
+Некорректные координаты
+Некорректный ADB-пакет
+Некорректный размер ADB-пакета: 
+Неожиданный ответ ADB при подключении
+Неподдерживаемая команда навигации
+Нет данных
+Нет данных автомобиля
+Нет доступных для запуска действий
+Нет доступных приложений
+Нет недавних разделений
+Нет разрешения Bluetooth/геолокации. Выдайте разрешения приложению и повторите сопряжение.
+Нет сети — оставлен сохранённый фон
+Ноги
+Ноги + стекло
+ОК
+ОПАСНО
+ОСТ.ЗАПР
+ОФОРМЛЕНИЕ JCT HOME
+Обложка, трек и исполнитель
+Обновить
+Обновить фон
+Обогрев · водитель
+Обогрев · пассажир
+Обогрев лобового
+Обогрев руля
+Обороты ДВС
+Общие параметры: экран, форма и сворачивание
+Одно нажатие запускает первое действие, следующее — второе
+Ожидание данных
+Ожидание…
+Окна приложений. Нажмите, чтобы раскрыть; удерживайте для перемещения
+Окна требуют Android 10 или новее
+Окно запустится после сохранения
+Окно пока недоступно
+Окно приложения
+Окно: 
+Оставить видимым при сворачивании
+Осталось до обновления базы: 
+Остаются только элементы с настройкой «Оставить видимым при сворачивании», на своих местах свёрнутого вида. Раскрытия и таймера нет.
+Открыть 
+Открыть все окна
+Открыть заднее левое окно
+Открыть заднее правое окно
+Открыть каталог
+Открыть настройки климата
+Открыть окно водителя
+Открыть окно пассажира
+Открыть панель климат-контроля
+Открыть панель лаунчера. Удерживайте для перемещения
+Открыть шторку
+Отмена
+Оценка на весь путь
+Ошибка ZIP: 
+Ошибка загрузки и обработки данных: 
+Ошибка записи в базу: 
+Ошибка запуска: 
+Ошибка контрольной суммы ADB-пакета
+Ошибка прямого включения WiFi: 
+Ошибка системных настроек WiFi: 
+Ошибка установки.
+ПАССАЖИР
+ПЕРЕЕЗД
+ПЕРЕКРЁСТ
+ПЕРЕХОД
+ПЛАТНО
+ПОВЕДЕНИЕ
+ПОВОРОТ
+ПОЛОСА
+ПОСТ ДПС
+ПОТОК ВОЗДУХА
+Пакет не установлен: 
+Панель
+Панель лаунчера
+Пассажир
+Первое: 
+Переключатель
+Переключатель двух действий
+Переключатель действий
+Переместить кнопку на экране
+Перетащите кнопку вдоль выбранного края
+Перетащите кнопку вдоль края
+Питание
+Планшет пассажира
+Планшет третьего ряда
+По сетке
+Погода
+Погода сейчас
+Подключаемся к кнопкам.
+Подключение к автомобилю
+Подключение к автомобилю…
+Подогрев водителя
+Подогрев пассажира
+Подпись на элементе
+Подробнее
+Поездка A · 
+Поездка A · — км
+Позиция: 
+Поиск доступного WiFi менеджера...
+Поиск по названию
+Пока нет элементов. Добавьте кнопку, переключатель или управление сиденьем.
+Показать панель лаунчера
+Показывать плавающую панель поверх лаунчера
+Положение кнопки вдоль края: 
+Пользовательская команда
+Последняя кнопка: 
+Последняя кнопка: нет
+Потеря аудиофокуса
+Поток климата: всё вместе
+Поток климата: лицо
+Поток климата: лицо и ноги
+Поток климата: лицо и стекло
+Поток климата: ноги
+Поток климата: ноги и стекло
+Поток климата: стекло
+Приложение
+Приложение в окне
+Приложения
+Приложения, разделение экрана, системные и пользовательские команды
+Применить к макету
+Приоткрыть все окна на 10%
+Приоткрыть заднее левое окно на 10%
+Приоткрыть заднее правое окно на 10%
+Приоткрыть окно водителя на 10%
+Приоткрыть окно пассажира на 10%
+Пробуем прямое включение WiFi...
+Пробуем системные настройки WiFi...
+Прозрачность · 
+Прозрачность виджета
+Прозрачность фона окна · 
+Прозрачность фона раскрытого окна
+Профиль не вернул ответ.
+Пустой или слишком длинный адрес
+РАСПОЛОЖЕНИЕ
+Разделение
+Размер запроса
+Размер раскрытого виджета
+Размер раскрытого виджета · 
+Размер свёрнутого виджета
+Размер свёрнутого виджета · 
+Ранее выбранный экран · 
+Раскрытый
+Раскрытый вид
+Раскрыть виджет
+Расположение меняется перетаскиванием в макете. Для свёрнутого вида оно настраивается отдельно.
+Расход бензина: 
+Расход бензина: —
+Рециркуляция
+Ровные ряды, кнопка открытия по центру
+Русский
+СТОП ЛИН
+СТРЕЛКА
+Свернуть виджет
+Свернуть через · 
+Сверху
+Сверху / снизу
+Свободно
+Свой фон установлен
+Связь потеряна, профиль подключится заново.
+Свёрнутый
+Свёрнутый вид
+Свёрнутый вид без кнопки «+»
+Сейчас
+Сейчас видимых элементов нет.
+Сейчас остаётся только кнопка раскрытия.
+Сервер вернул HTTP 
+Сервис окон отключён
+Сервис окон: 
+Системное окно подтверждения VPN недоступно
+Системные настройки WiFi запущены
+Сканирование BLE не запустилось: 
+Скорость вентилятора
+Скрыть подробности
+Слева
+Слева / справа
+Слишком много точек
+Снизу
+Соберите своё управление
+Сопряжение выполнено.
+Сопряжение остановлено.
+Сопряжение сохранено.
+Сопрячь заново
+Сопрячь кнопки
+Сохранен некорректный адрес кнопки. Сопрягите кнопки заново через поиск.
+Сохранить
+Сохранить позицию
+Специфичные WiFi Activity не найдены, пробуем общие методы...
+Список действий загружается, повторите через секунду
+Список действий сейчас недоступен
+Справа
+Ставим воспроизведение на паузу...
+Стандартная тема JCT
+Стекло
+ТОННЕЛЬ
+Таймер автосворачивания, секунд
+Так будет выглядеть виджет
+Телеметрия
+Телеметрия Exlantix
+Тема установлена и выбрана
+Температура и состояние сейчас
+Темы лаунчера
+Темы рабочего стола
+Тест запущен
+Тест стоп
+Тип элемента
+Только фон раскрытого окна. Яркость кнопок и индикаторов не меняется.
+Топливо
+Три уровня с индикацией
+УЧАСТОК
+Увеличить выбранный виджет
+Удалить
+Удалить «
+Удалить тему 
+Удалить тему?
+Уже на экране
+Уменьшить выбранный виджет
+Управление энергией
+Уровень 
+Успешно запущен: 
+Успешно запущено: 
+Установить
+Установить из ZIP
+Установить скорость вентилятора климата на 
+Установить температуру 
+Установка завершена успешно!
+ФИНИШ
+ФО
+Файл извлечен: 
+Файлы выбранной темы не найдены. Включен стандартный экран.
+Фон обновлён
+Форма плавающего лотка
+Часы и дата
+Широта должна быть от -90 до 90
+Экран виджета сейчас недоступен
+Экран для отображения
+Элементы выровнены в ряды
+Элементы и их действия
+Это приложение уже добавлено в окно
+Этот виджет уже добавлен
+а
+автомат\p{L}*|auto|automatic
+автоматический режим климата
+автомобил\p{L}*|машин\p{L}*|car|vehicle
+багажник
+багажник\p{L}*|trunk|boot
+бардач\p{L}*|перчаточн\p{L}* ящик|glovebox|glove box
+бардачок
+бвгджзклмнпрстфхцчшщ
+в
+вентилятор\p{L}*|fan
+вентиляц\p{L}*|ventilat\p{L}*
+верни|вернуть|восстанови|восстановить|unmute|restore
+включ
+включ\p{L}*|запуст\p{L}*|вруб(?:и|ить|ай)|on|enable|start
+включи
+включить
+водител
+водител\p{L}*|лев\p{L}*|слева|driver|left
+водител\p{L}*|пассажир\p{L}*|лев\p{L}*|прав\p{L}*|слева|справа|задн\p{L}*|передн\p{L}*|сзади|спереди|driver|passenger|left|right|rear|front|back
+водительские|пассажирские|передние|задние|левые|правые|передних|задних|левых|правых
+водителя
+воздух\p{L}* (?:на|в) (?:лиц\p{L}*|ног\p{L}*|стекл\p{L}*|лобов\p{L}*)|air (?:to|on|at) (?:the )?(?:face|feet|glass|windshield)
+восемнадцать
+восемь
+восемьдесят
+все|всех|all
+всего (?:окна|окон|окошки|окошек)
+вторая
+второго
+второй
+втором
+второму
+вторую
+выключ
+выключ\p{L}*|отключ\p{L}*|выруб(?:и|ить|ай)|убери|off|disable
+выключи
+выключить
+выполн
+г.
+городское
+градус
+градуса
+градусов
+гроз
+громкост\p{L}*|громче|погромче|потише|тише|volume|louder|quieter
+да|звони|позвони|набери|подтверждаю|yes|call|confirm
+давай
+два
+двадцать
+двадцать восемь
+двадцать два
+двадцать пять
+двадцать четыре
+двадцать шесть
+две
+двенадцать
+двер\p{L}*|doors?
+двер\p{L}*|водител\p{L}*|пассажир\p{L}*|панел\p{L}*|уров\p{L}*|окн\p{L}*|окош\p{L}*|стекл\p{L}*|сиден\p{L}*|кресл\p{L}*|багажник\p{L}*|бардач\p{L}*|климат\p{L}*|громкост\p{L}*|температур\p{L}*|передн\p{L}*|задн\p{L}*|лев\p{L}*|прав\p{L}*|сам\p{L}*
+двойку
+девяносто
+девятнадцать
+девять
+десять
+до|to
+дожд
+дуй|подуй
+дымк
+е
+единицу
+ей
+заглуши|заглушить
+задн\p{L}*|rear
+задн\p{L}*|сзади|rear
+задн\p{L}*|сзади|rear|back
+заднее левое окно
+заднее правое окно
+закр
+закр\p{L}*|захлоп\p{L}*|подним\p{L}*|close|raise|shut
+закрой
+закрыть
+запуст
+звук\p{L}*|sound|audio|unmute
+и
+и|and
+ий
+или|либо|or
+к
+кВт
+климат-контроль
+климат\p{L}*|кондиционер\p{L}*|кондей\p{L}*|climate|air conditioning|ac|синхрон\p{L}*|sync|рециркуляц\p{L}*|recirculation
+км
+км/ч
+кондиционер
+кондиционер\p{L}*|кондей\p{L}*|ac|air conditioning
+л
+л/100 км
+лев\p{L}*|слева|left
+лив
+лиц\p{L}*|face
+лиц\p{L}*|ног\p{L}*|face|feet|foot
+лицо
+лицо и ноги
+лобов\p{L}*|windshield
+максим\p{L}*|max
+максимальный обдув лобового стекла
+максимум|максимальн\p{L}*|maximum|max
+малооблач
+метел
+микрофон\p{L}*|microphone|mic|навигац\p{L}*|navigation|звон\p{L}*|телефон\p{L}*|phone|call|уведомлен\p{L}*|notification\p{L}*|после|after|наполовину|половин\p{L}*|half|процент\p{L}*|percent
+мин
+минимум|минимальн\p{L}*|minimum|min
+можешь
+можно
+мокр
+морос
+мут|мьют|mute|беззвучн\p{L}*
+на
+на (?!полную|стороне|сторон[уы]|водител|пассажир|передн|задн|лев|прав)\p{L}+
+на все сто
+на паузу
+на|by
+навигатор
+наполовину|на половину|половин\p{L}*|half|halfway
+наполовину|половин\p{L}*|четверт\p{L}*|half|halfway|quarters?|процент\p{L}*|percent|сантиметр\p{L}*
+настрой\p{L}*|меню|settings|menu
+не|нет|без|нельзя|отмен\p{L}*|отбой|перестань|don't|dont|not|never|without|cancel|stop
+ног\p{L}*|feet|foot
+ноги
+ноги и стекло
+ноль
+ноль|один|одна|одну|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|одиннадцать|двенадцать|тринадцать|четырнадцать|пятнадцать|шестнадцать|семнадцать|восемнадцать|девятнадцать|двадцать|тридцать|сорок|пятьдесят|шестьдесят|семьдесят|восемьдесят|девяносто|сто|первый|первую|первом|второй|вторую|втором|третий|третью|третьем|четверть|четверти
+нулевой
+об/мин
+оба|обе|both
+обдув\p{L}*|поток климата|подуй|дуй|airflow|air flow
+обл.
+область
+облач
+обогрев
+обогрев заднего стекла
+обогрев лобового стекла
+обогрев руля
+обогрева
+один
+одиннадцать
+одна
+одну
+ой
+окн\p{L}*|окон|окош\p{L}*|windows?
+окна (?:слева|справа|сзади|спереди)
+окна|окон|окнам|окнами|окнах|окошки|окошек|окошкам|окошками|окошках|windows
+окно
+окно водителя
+опусти
+отключи
+отключить
+откр
+откр\p{L}*|закр\p{L}*|включ\p{L}*|выключ\p{L}*|отключ\p{L}*|запуст\p{L}*|покаж\p{L}*|показать|вывед\p{L}*|вывод\p{L}*|вывести|перенес\p{L}*|перенос\p{L}*|переброс\p{L}*|верни\p{L}*|вернуть|сдела\p{L}*|переключ\p{L}*|установ\p{L}*|постав\p{L}*|вруб\p{L}*|выруб\p{L}*|мой|мне|мое|мою|для|это|этот|эту|сейчас|обратно|уже|опять|снова|open|close|enable|disable|turn|show|start|launch|switch|please|the|this|that|back|return|restore|now|again
+откр\p{L}*|отвори|open|lower|опуст\p{L}*|опусти
+открой
+открой|открыть|закрой|закрыть|включи|включить|выключи|выключить|запусти|запустить|open|close|launch|turn on|turn off
+открой|открыть|закрой|закрыть|включи|включить|выключи|выключить|отключи|запусти|подними|опусти|увеличь|уменьши|установи|поставь|прибавь|убавь|open|close|enable|disable|increase|decrease|raise|lower|set
+открой|открыть|закрой|закрыть|включи|включить|выключи|выключить|установи|установить|open|close|on|off|set|turn on|turn off
+открыт(?:а|о|ы)?|закрыт(?:а|о|ы)?|включен(?:а|о|ы)?|выключен(?:а|о|ы)?
+открыть
+отмена
+отмена|отбой|нет|не надо|cancel|no
+ошибка
+пасмур
+пассажир
+пассажир\p{L}*|прав\p{L}*|справа|passenger|right
+пассажира
+первая
+первого
+первом
+первому
+первую
+первый
+передн\p{L}*|спереди|front
+переднее правое окно
+переключ\p{L}*|toggle
+переключи
+переменн
+по
+повыс
+погас\p{L}*|потуш\p{L}*|затемн\p{L}*|отобраз\p{L}*|сним\p{L}*|возобнов\p{L}*|продолж\p{L}*|слож\p{L}*|разверн\p{L}*|прижми|убери|раскрой|хочу|нужно|blank|resume|pause|fold|unfold
+погрей
+подними
+подогре\p{L}*|погрей|нагрей
+подогрев
+подогрева
+пожалуй
+пожалуйста
+покаж\p{L}*|show
+полност\p{L}*|на полную|нараспашку|до упора|до конца|настежь|fully|all the way
+полностью
+половиной
+пониз
+пос.
+поселение
+поставить
+поставь
+потом|позже|затем|завтра|через|later|tomorrow|then
+почему|зачем|когда|если|ли|whether|why|when|if
+прав\p{L}*|справа|right
+предыдущ\p{L}*|прошл\p{L}*|назад|previous
+при
+прибав
+прибавить
+прибавь
+прибор
+прибор$1
+приборке
+приборки
+приборку
+приборная
+приборной
+приборную
+прикр\p{L}*|притвор\p{L}*
+приложен\p{L}*|экран\p{L}*|браузер\p{L}*|application|browser
+приоткр
+приоткр\p{L}*|приопуст\p{L}*|приопусти|при\s+откр\p{L}*|немного|чуть|слегка|slightly|little
+приоткрой
+приоткрыть
+произнеси|скажи|повтори|расскажи|вчера|сказал|слышал|включил|выключил|открыл|закрыл|открывал|закрывал|установил|поставил|repeat|say|yesterday
+прохладнее
+процент
+процент\p{L}*|percent|%
+процент\p{L}*|percent|\d+%
+процент\p{L}*|percent|\d+%|градус\p{L}*|degrees?
+процент\p{L}*|percent|процентов|%|на сколько|на сколько-то
+процента
+процентов
+прояснен
+пятнадцать
+пятый
+пять
+пятьдесят
+р-н
+разложи
+разложить
+район
+рециркуляц\p{L}*|recirculation
+рециркуляцию
+рул
+рул\p{L}*|steering|wheel
+с
+сантиметр\p{L}*|миллиметр\p{L}*|centimet\p{L}*|inches|cm|mm
+сверху и снизу
+сдела
+сделай
+сделай|сделать|поменяй|поменять|измени|изменить|переключи|переключить|отрегулируй|change|adjust|make
+сделать
+сел.
+сельское
+семнадцать
+семь
+семьдесят
+семьдесят пять
+сиден
+сиден\p{L}*|сидуш\p{L}*|кресл\p{L}*|seat[s]?
+синхрон\p{L}*|sync|synchronization
+синхронизацию зон климата
+скорост\p{L}*|уров\p{L}*|speed|level|сильнее|слабее
+слева и справа
+следующ\p{L}*|дальше|next
+сложи
+сложить
+снег
+сорок
+стекл\p{L}*|glass
+стекло
+сто
+температур\p{L}*|градус\p{L}*|temperature|degrees?|теплее|потеплее|прохладнее|похолоднее|холоднее|warmer|cooler|поддай тепла|добавь тепла
+температура воздуха\s*([+\-−]?\d+(?:[.,]\d+)?)°
+теплее
+тест test
+трек\p{L}*|песн\p{L}*|композици\p{L}*|tracks?|songs?
+третий
+третьем
+третьему
+третью
+третья
+три
+три четверти|three quarters
+тридцать
+тринадцать
+тройку
+туман
+у
+убав
+убавить
+убавь
+увелич
+увелич\p{L}*|прибав\p{L}*|повыс\p{L}*|подним\p{L}*|теплее|потеплее|increase|warmer|raise|громче|погромче|louder|поддай тепла|добавь тепла
+увеличить
+увеличь
+уменьш
+уменьш\p{L}*|убав\p{L}*|пониз\p{L}*|опуст\p{L}*|прохладнее|похолоднее|холоднее|decrease|cooler|lower|тише|потише|quieter
+уменьши
+уменьшить
+успешно
+установ\p{L}*|постав\p{L}*|сдела\p{L}*|выстав\p{L}*|set|make|направ\p{L}*|direct
+установи
+установи скорость вентилятора 
+установить
+фаренгейт\p{L}*|fahrenheit|кельвин\p{L}*|kelvin
+федеральный округ
+четверт\p{L}*|quarter
+четвертый
+четыре
+четырнадцать
+шестнадцать
+шесть
+шестьдесят
+штатн\p{L}*|родн\p{L}*|заводск\p{L}*|обычн\p{L}*|стандартн\p{L}*|прибор\p{L}*|панел\p{L}*|экран\p{L}*|центральн\p{L}*|приложен\p{L}*|оригинальн\p{L}*|factory|original|standard|instrument|cluster|panel|screen|central|app|application
+ы
+ь
+ю
+я
+ясно
+اللغة العربية
+—
+—°
+•••
+‹
+‹  Создать комбинацию
+‹ Все виджеты
+‹ Назад
+›
+←
+↑
+→
+↓
+↖
+↗
+↘
+↙
+↻
+⇄
+−
+− Размер
+⌃
+⌄
+⏰ Системная тема переключается автоматически
+▁
+▦
+▾
+◈
+○
+●
+☀
+♨
+♪
+✓
+✕
+✥
+✦
+❄
+❓ Тема системы не определена
+安装
+更新
+＋
+＋\nКомбинация
+＋ Добавить
+＋ Добавить элемент
+＋ Размер
+＋ Создать виджет
+🌓 В системе включена тёмная тема
+🌞 В системе включена светлая тема
