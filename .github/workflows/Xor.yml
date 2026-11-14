@@ -1,4 +1,4 @@
-name: Smart XOR Decrypt
+name: Smart XOR Decrypt v2
 
 on:
   workflow_dispatch:
@@ -16,14 +16,26 @@ jobs:
       - name: Проверить наличие папок
         run: |
           if [ ! -d "output_jadx" ] || [ ! -d "output_apktool" ]; then
-            echo "❌ Сначала запустите декомпиляцию!"
+            echo "❌ Сначала запустите декомпиляцию (папки output_jadx и output_apktool отсутствуют)!"
             exit 1
           fi
+          echo "✅ Папки найдены, начинаем анализ..."
 
-      - name: Умная расшифровка XOR
+      - name: Умная расшифровка XOR (v2)
         run: |
-          cat > smart_xor.py << 'PYEOF'
+          cat > smart_xor_v2.py << 'PYEOF'
           import os, re
+
+          def parse_bytes(byte_str):
+              # Очищаем строку от мусора: 'new byte[]', '{', '}', пробелы
+              clean = byte_str.replace('new byte[]', '').replace('{', '').replace('}', '').replace(' ', '').replace('\n', '').replace('\t', '')
+              if not clean:
+                  return b''
+              try:
+                  # Python отлично справляется с отрицательными числами: int('-29') = -29
+                  return bytes([int(x) for x in clean.split(',')])
+              except ValueError:
+                  return b''
 
           def xor_decrypt(data, key):
               result = bytearray(data)
@@ -32,69 +44,70 @@ jobs:
                   result[i] ^= key[i % key_len]
               try:
                   return result.decode('utf-8').strip()
-              except:
-                  return result.decode('utf-8', errors='ignore').strip()
-
-          def parse_byte_array(s):
-              s = s.replace('new byte[]', '').replace('{', '').replace('}', '').replace(' ', '')
-              if not s: return []
-              res = []
-              for p in s.split(','):
-                  p = p.strip()
-                  if p.startswith('0x') or p.startswith('0X'):
-                      val = int(p, 16)
-                      if val > 127: val -= 256
-                      res.append(val)
-                  else:
-                      res.append(int(p))
-              return bytes(res)
+              except UnicodeDecodeError:
+                  return result.decode('latin1').strip()
 
           def main():
               os.makedirs('decrypted_xor', exist_ok=True)
               results = []
               
-              # Ищем вызовы метода h с байтовыми массивами в Java-коде
-              for root, _, files in os.walk('output_jadx/sources'):
+              # Гибкий regex: ловит h( new byte[]{...} , new byte[]{...} ) 
+              # или m.h( ... ), даже с переносами строк внутри
+              pattern = re.compile(r'(?:m\.)?h\s*\(\s*new\s+byte\[\]\s*\{([^}]+)\}\s*,\s*new\s+byte\[\]\s*\{([^}]+)\}\s*\)', re.MULTILINE | re.DOTALL)
+
+              java_dir = 'output_jadx/sources'
+              if not os.path.exists(java_dir):
+                  print(f"❌ Директория {java_dir} не найдена!")
+                  return
+
+              file_count = 0
+              for root, _, files in os.walk(java_dir):
                   for file in files:
-                      if not file.endswith('.java'): continue
+                      if not file.endswith('.java'):
+                          continue
+                      file_count += 1
                       fp = os.path.join(root, file)
                       try:
                           with open(fp, 'r', encoding='utf-8', errors='ignore') as f:
-                              lines = f.readlines()
+                              content = f.read()
                           
-                          for i, line in enumerate(lines):
-                              if 'h(new byte[]' in line and 'new byte[]' in line:
-                                  context = "".join(lines[max(0,i-2):min(len(lines),i+3)])
-                                  arrays = re.findall(r'new byte\[\]\s*\{[^}]+\}', context)
-                                  if len(arrays) >= 2:
-                                      data_arr = parse_byte_array(arrays[0])
-                                      key_arr = parse_byte_array(arrays[1])
-                                      
-                                      if len(data_arr) > 0 and len(key_arr) > 0:
-                                          decrypted = xor_decrypt(data_arr, key_arr)
-                                          # Фильтр мусора: оставляем только строки с буквами и длиной > 3
-                                          if any(c.isalpha() for c in decrypted) and len(decrypted) > 3:
-                                              results.append({
-                                                  'file': fp.replace('output_jadx/sources/', ''),
-                                                  'line': i+1,
-                                                  'decrypted': decrypted
-                                              })
-                      except: pass
+                          for match in pattern.finditer(content):
+                              data_str = match.group(1)
+                              key_str = match.group(2)
+                              
+                              data_bytes = parse_bytes(data_str)
+                              key_bytes = parse_bytes(key_str)
+                              
+                              if len(data_bytes) > 0 and len(key_bytes) > 0:
+                                  decrypted = xor_decrypt(data_bytes, key_bytes)
+                                  
+                                  # Фильтр: длина > 1 и есть хотя бы один печатный символ
+                                  if len(decrypted) > 1 and any(c.isprintable() for c in decrypted):
+                                      line_num = content[:match.start()].count('\n') + 1
+                                      rel_path = fp.replace(java_dir + '/', '')
+                                      results.append({
+                                          'file': rel_path,
+                                          'line': line_num,
+                                          'decrypted': repr(decrypted) # repr покажет \n, \t и пробелы
+                                      })
+                      except Exception as e:
+                          print(f"⚠️ Ошибка в {fp}: {e}")
 
-              # Сохраняем чистые результаты
+              print(f"🔍 Просканировано файлов: {file_count}")
+              print(f"✅ Найдено расшифровок: {len(results)}")
+              
               with open('decrypted_xor/real_decrypted.txt', 'w', encoding='utf-8') as out:
-                  out.write(f"✅ Успешно расшифровано: {len(results)} реальных строк\n\n")
+                  out.write(f"✅ Успешно расшифровано: {len(results)} строк\n\n")
                   for i, r in enumerate(results, 1):
                       out.write(f"#{i} | {r['file']}:{r['line']}\n")
                       out.write(f"🔓 {r['decrypted']}\n")
                       out.write("-" * 70 + "\n")
-              
-              print(f"Готово! Найдено {len(results)} реальных расшифровок.")
 
           if __name__ == "__main__":
               main()
           PYEOF
-          python3 smart_xor.py
+          
+          python3 smart_xor_v2.py
 
       - name: Commit и Push
         run: |
@@ -102,9 +115,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add decrypted_xor
           if ! git diff --staged --quiet; then
-            git commit -m "chore: умная расшифровка XOR (алгоритм e0.m.h)"
+            git commit -m "chore: умная расшифровка XOR v2 (исправлен парсинг)"
             git push
+          else
+            echo "⚠️ Изменений нет, возможно, строки уже были расшифрованы или паттерн не найден."
           fi
 
       - name: Очистка
-        run: rm -f smart_xor.py
+        run: rm -f smart_xor_v2.py
