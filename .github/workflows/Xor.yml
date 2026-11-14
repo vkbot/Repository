@@ -1,0 +1,212 @@
+name: Decompile and Decrypt XOR
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: 'Прямая ссылка на скачивание APK'
+        required: true
+      xor_key:
+        description: 'Ключ XOR (в hex, например: 42 или 41424344 для многобайтового)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Скачать репозиторий
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Настроить Git LFS
+        run: |
+          git lfs install
+          git lfs track "*.png"
+          git lfs track "*.webp"
+          git lfs track "*.jpg"
+          git lfs track "*.jpeg"
+          git lfs track "*.so"
+          git add .gitattributes
+
+      - name: Очистить старые результаты
+        run: |
+          git rm -rf --cached output_apktool output_jadx decrypted_xor || true
+          rm -rf output_apktool output_jadx decrypted_xor
+
+      - name: Скачать APK
+        run: curl -L "${{ inputs.apk_url }}" -o target.apk
+
+      - name: Установить Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Установить apktool и jadx
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apktool unzip python3
+          wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O jadx.zip
+          unzip -q jadx.zip -d jadx-bin
+          chmod +x jadx-bin/bin/jadx
+
+      - name: Декомпиляция apktool
+        run: apktool d target.apk -o output_apktool -f
+
+      - name: Декомпиляция jadx
+        env:
+          JAVA_OPTS: "-Xmx6g"
+        run: jadx-bin/bin/jadx -j 4 -d output_jadx target.apk
+
+      - name: Создать скрипт расшифровки XOR
+        run: |
+          cat > xor_decrypt.py << 'EOF'
+          #!/usr/bin/env python3
+          import os
+          import re
+          import sys
+          
+          def xor_decrypt(data, key):
+              """Расшифровка XOR"""
+              if isinstance(key, str):
+                  key = bytes.fromhex(key)
+              return bytes([data[i] ^ key[i % len(key)] for i in range(len(data))])
+          
+          def find_byte_arrays_in_java(java_dir):
+              """Поиск массивов байтов в Java-коде"""
+              results = []
+              for root, dirs, files in os.walk(java_dir):
+                  for file in files:
+                      if file.endswith('.java'):
+                          filepath = os.path.join(root, file)
+                          try:
+                              with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                                  content = f.read()
+                                  
+                              # Паттерн для массивов байтов: new byte[]{0x12, 0x34, ...}
+                              pattern = r'new\s+byte\[\]\s*\{([^}]+)\}'
+                              matches = re.finditer(pattern, content)
+                              
+                              for match in matches:
+                                  bytes_str = match.group(1)
+                                  # Извлекаем hex значения
+                                  hex_values = re.findall(r'0x([0-9a-fA-F]{2})', bytes_str)
+                                  if hex_values:
+                                      byte_array = bytes([int(h, 16) for h in hex_values])
+                                      results.append({
+                                          'file': filepath,
+                                          'data': byte_array,
+                                          'context': match.group(0)[:100]
+                                      })
+                          except Exception as e:
+                              pass
+              return results
+          
+          def try_auto_decrypt(byte_array):
+              """Попытка автоматической расшифровки перебором всех 1-байтных ключей"""
+              readable_results = []
+              for key in range(256):
+                  decrypted = xor_decrypt(byte_array, key)
+                  try:
+                      text = decrypted.decode('utf-8', errors='ignore')
+                      # Проверяем читаемость
+                      printable_ratio = sum(1 for c in text if c.isprintable() or c in '\n\r\t') / max(len(text), 1)
+                      if printable_ratio > 0.7 and len(text) > 5:
+                          readable_results.append({
+                              'key': key,
+                              'key_hex': f'0x{key:02x}',
+                              'text': text[:200],
+                              'ratio': printable_ratio
+                          })
+                  except:
+                      pass
+              return sorted(readable_results, key=lambda x: x['ratio'], reverse=True)[:5]
+          
+          def main():
+              xor_key = os.environ.get('XOR_KEY', '')
+              output_dir = 'decrypted_xor'
+              os.makedirs(output_dir, exist_ok=True)
+              
+              print("🔍 Поиск массивов байтов в Java-коде...")
+              arrays = find_byte_arrays_in_java('output_jadx/sources')
+              print(f"Найдено {len(arrays)} потенциальных массивов байтов")
+              
+              results = []
+              
+              for i, arr_info in enumerate(arrays):
+                  print(f"\n📦 Массив #{i+1} из {arr_info['file']}")
+                  print(f"   Размер: {len(arr_info['data'])} байт")
+                  
+                  if xor_key:
+                      # Расшифровка с указанным ключом
+                      decrypted = xor_decrypt(arr_info['data'], xor_key)
+                      try:
+                          text = decrypted.decode('utf-8', errors='ignore')
+                          print(f"   🔑 Ключ: {xor_key}")
+                          print(f"   ✨ Результат: {text[:100]}")
+                          results.append({
+                              'file': arr_info['file'],
+                              'key': xor_key,
+                              'decrypted': text
+                          })
+                      except:
+                          print(f"   ❌ Не удалось декодировать")
+                  else:
+                      # Автоматический перебор
+                      auto_results = try_auto_decrypt(arr_info['data'])
+                      if auto_results:
+                          print(f"   🎯 Возможные расшифровки:")
+                          for res in auto_results[:3]:
+                              print(f"      Ключ {res['key_hex']}: {res['text'][:80]}")
+                          results.append({
+                              'file': arr_info['file'],
+                              'auto_results': auto_results
+                          })
+              
+              # Сохранение результатов
+              with open(f'{output_dir}/results.txt', 'w', encoding='utf-8') as f:
+                  f.write("=== РЕЗУЛЬТАТЫ РАСШИФРОВКИ XOR ===\n\n")
+                  for i, res in enumerate(results):
+                      f.write(f"\n--- Результат #{i+1} ---\n")
+                      f.write(f"Файл: {res['file']}\n")
+                      if 'key' in res:
+                          f.write(f"Ключ: {res['key']}\n")
+                          f.write(f"Расшифровка:\n{res['decrypted']}\n")
+                      elif 'auto_results' in res:
+                          f.write("Возможные расшифровки (перебор 1-байтных ключей):\n")
+                          for ar in res['auto_results']:
+                              f.write(f"  Ключ {ar['key_hex']}: {ar['text']}\n")
+              
+              print(f"\n✅ Результаты сохранены в {output_dir}/results.txt")
+          
+          if __name__ == "__main__":
+              main()
+          EOF
+          chmod +x xor_decrypt.py
+
+      - name: Запустить расшифровку XOR
+        env:
+          XOR_KEY: ${{ inputs.xor_key }}
+        run: python3 xor_decrypt.py
+
+      - name: Commit и Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add output_apktool output_jadx decrypted_xor
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: декомпиляция и расшифровка XOR"
+            git push
+          else
+            echo "Нет изменений для коммита."
+          fi
+
+      - name: Очистка
+        run: rm -rf target.apk jadx.zip jadx-bin xor_decrypt.py
